@@ -122,7 +122,17 @@ int main()
 	
 	
 	
-	
+	#include<stdio.h>
+#include<string.h>
+int main()
+{
+    int LOVE[10] = { 0 };
+    int mylove = 0;
+    printf("%d\n", sizeof(LOVE));
+    mylove = sizeof(LOVE) / sizeof(LOVE[0]);
+    printf("mylove= %d\n", mylove);
+    return 0;
+}
 	
 	
 	
