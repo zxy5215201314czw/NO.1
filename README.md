@@ -163,6 +163,26 @@ int main()
 	
 	
 	
-	
+	#include<stdio.h>
+#include<string.h>
+int main()
+{
+    int a = 521;
+    int b = 520;
+    int LOVE = 0;
+    LOVE = (a < b ? a : b);
+    printf("LOVE=%d\n", LOVE);
+    return 0;
+}
+//#include<stdio.h>
+//#include<string.h>
+//int main()
+//{
+//    int a = 1;
+//    int b = 4;
+//    int c = a && b;
+//    printf("c=%d\n", c);               
+//    return 0;
+//}
 	
 	
