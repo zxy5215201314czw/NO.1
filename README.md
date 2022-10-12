@@ -115,7 +115,7 @@ int main()
 {
     int a = 0;
     printf("%d\n", a);
-    printf("%d\n", !a);                                                             //      ！是一个反逻辑的操作符  单目操作符
+    printf("%d\n", !a);                                                            
     return  0;
 }
  
@@ -135,7 +135,18 @@ int main()
 }
 	
 	
-	
+	#include<stdio.h>
+#include<string.h>
+int main()
+{
+    int num1 = 90;
+    int num2 = 159;
+    if (num1 > num2)
+        printf("较大的是%d\n", num1);
+    else
+        printf("较大的是%d\n", num2);
+    return 0;
+}              
 	
 	
 	
