@@ -108,7 +108,17 @@ int main()
 }
 	
 	
-	
+	#define    _CRT_SECURE_NO_WARNINGS  1
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    int a = 0;
+    printf("%d\n", a);
+    printf("%d\n", !a);                                                             //      ！是一个反逻辑的操作符  单目操作符
+    return  0;
+}
+ 
 	
 	
 	
