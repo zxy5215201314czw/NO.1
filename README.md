@@ -244,7 +244,25 @@ int main()
 	
 	
 	
-	
+	#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+void love()
+{
+	static int a = 1;
+	a++;
+	printf("a=%d\n", a);
+}
+int main()
+{
+	int b = 0;
+	while (b < 5)
+	{
+		love();
+		b++;
+	}
+	return 0;
+}
 	
 	
 	
