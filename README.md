@@ -186,3 +186,39 @@ int main()
 //}
 	
 	
+	#include<stdio.h>
+#include<string.h>                           
+int main()
+{
+	int b = 0;
+	int  a = 0;
+	printf("你会记得现在的状态吗(1/0)\n");
+	scanf("%d", &b);
+	if (b == 1)
+		while (a < 100000)
+		{
+			printf("我忘不掉你%d\n", a);
+			a++;
+
+		}
+	else
+		printf("那就这样吧\n");
+	if (a >= 100000)
+		printf("好吧，好吧，那我就陪你走下去\n");
+	return 0;
+}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
