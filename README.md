@@ -210,7 +210,37 @@ int main()
 
 	
 	
-	
+	#define   _CRT_SECURE_NO_WARNINGS  1
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	typedef int u_int;
+	u_int  a = 0;
+	u_int  b = 0;
+	u_int  c = 0;
+	int yes = 1;
+	int no = 0;
+	printf("忘不掉的盛夏(yes/0)\n");
+	scanf("%d\n", &a);
+	if (a == 0)
+		while (b < 50)
+		{
+			printf("把爱留在冬至\n", b);
+			b++;
+		}
+	else
+		while (c < 50)
+		{
+			printf("还记得那个深秋么\n", c);
+			c++;
+		}
+	if (b >= 50)
+	printf("她不值得\n");
+	if (c >= 50)
+	printf("珍惜眼下的她吧\n");
+	return 0;
+}
 	
 	
 	
