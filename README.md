@@ -321,3 +321,29 @@ int main()
 		printf("乖，别哭\n");
 	return 0;
 }
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	int a = 0;
+	int b = 2;
+	int d = 0;
+	scanf("%d", &a);
+	int c = a % b;
+	{	if (c == 1)
+		printf("这是一个奇数\n");
+	else
+		printf("这不是一个奇数\n");
+}
+	while (d < 101)
+	{
+	    int e = d % b;
+		if (e == 1)
+			printf("%d\n", d);
+	     	d++;
+	}
+	return 0;
+}
+
+   
