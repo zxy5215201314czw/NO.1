@@ -266,7 +266,39 @@ int main()
 	
 	
 	
-	
-	
+	#define  _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	int love = 521;
+	int* you = &love;
+	*you = 520;
+	printf("you=%d\n", you);
+	printf("love=%d\n", love);
+	return 0;
+}		
+
+
+	#define  _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+struct book
+{
+	char name[20];
+	short price;
+};
+int main()
+{
+	struct book a = { "love\n",55 };
+	struct book* b = &a;
+	printf("%s\n", (*b).name);
+	printf("%d\n", (*b).price);
+	printf("书名：%s\n", a.name);
+	printf("价格：%d元\n", a.price);
+	a.price = 0;
+	printf("修改后的价格:%d元\n", a.price);
+	return 0;
+}
 	
 	
