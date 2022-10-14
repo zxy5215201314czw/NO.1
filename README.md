@@ -368,3 +368,31 @@ int main()
 	}
 	return 0;
 }
+
+	
+	#include<stdio.h>
+#include<string.h>
+int main()
+{
+	int a = 1;
+	int b = 2;
+	switch (a)
+	{
+	case 1:b++;
+	case 2:a++;
+	case 3:
+		switch (a)
+		{
+		case 1:a++;
+		case 2:b++;
+			a++;
+				break;
+		}
+	case 4:b++;
+		break;
+	default:
+		break;
+	}
+	printf("b=%d,a=%d\n", b, a);
+	return 0;
+}
