@@ -302,3 +302,22 @@ int main()
 }
 	
 	
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	int a = 0;
+	int b = 0;
+	scanf("%d", &a);
+	if (a < 14)
+		printf("孩子\n");
+	else if (a >= 14 && a < 22)
+		printf("少女少年\n");
+	else if (a >= 22 && a < 30)
+		printf("男人女人\n");
+	else if (a >= 30 && a < 50)
+		printf("活出个样了么\n");
+	else
+		printf("乖，别哭\n");
+	return 0;
+}
