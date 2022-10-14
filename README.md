@@ -396,3 +396,16 @@ int main()
 	printf("b=%d,a=%d\n", b, a);
 	return 0;
 }
+
+	#include<stdio.h>
+#include<string.h>
+int main()
+{
+	int ch = 0;
+	while ((ch = getchar()) != EOF)
+	{
+		putchar(ch);
+	}
+	return  0;
+}
+
