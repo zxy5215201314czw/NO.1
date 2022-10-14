@@ -346,4 +346,25 @@ int main()
 	return 0;
 }
 
-   
+   #include<stdio.h>
+#include<string.h>
+int main()
+{
+	printf("1=爱我 0=不爱我\n");
+	printf("你爱我么（1/0）\n");
+	int a = 0;
+	scanf("%d", &a);
+	switch (a)
+	{
+	case 1:
+		printf("我也爱你呢\n");
+		break;
+	case 0:
+		printf("我不可爱么\n");
+		break;
+	default:
+		printf("你在干什么啊\n");
+		break;
+	}
+	return 0;
+}
