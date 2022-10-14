@@ -409,3 +409,27 @@ int main()
 	return  0;
 }
 
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	long a = 0;
+	int b = 0;
+	printf("请输入密码：\n");
+	scanf("%s", &a);
+	while ((b = getchar()) != '\n')
+	{
+		;
+	}
+	printf("请确认密码：（Y/N）\n");
+	a = getchar();
+	if ("a='Y")
+	{
+		printf("确认成功\n");
+	}
+	else
+	{
+		printf("放弃确认\n");
+	}
+	return 0;
+}
