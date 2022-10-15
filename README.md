@@ -514,3 +514,46 @@ int main()
 	printf("z=%d\n",z);
 	return 0;
 }
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	int a = 0;
+	int n = 0;
+	int z = 1;
+	int x = 0;
+	for (n = 1; n <= 3; n++)
+	{
+        int z = 1;
+		for (a = 1; a <= n; a++)
+		{
+		    
+			z = z * a;
+
+		}
+
+		x = x + z;
+	}
+	printf("x=%d\n",x);
+	return 0;
+}
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	int a = 0;
+	int n = 0;
+	int z = 1;
+	int x = 0;
+	for (n = 1; n <= 4; n++)
+	{
+
+		z = z * n;
+
+
+		x = x + z;
+	}
+	printf("x=%d\n", x);
+	return 0;
+}
