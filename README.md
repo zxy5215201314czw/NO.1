@@ -465,3 +465,20 @@ int main()
 	}
 	return 0;
 }
+
+			    
+			    #include<stdio.h>
+#include<string.h>
+int main()
+{
+	int a = 0;
+	int b = 0;
+	for (a = 0; a < 5; a++)
+	{
+		for (b = 0; b < 5; b++)
+		{
+			printf("我爱你啊%d\t",a);
+		}
+	}
+	return 0;
+}
