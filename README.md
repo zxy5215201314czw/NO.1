@@ -449,3 +449,19 @@ int main()
 	}
 	return 0;
 }
+
+	#include<stdio.h>
+#include<string.h>
+int main()
+{
+	int a = 0;
+	for (a = 1; a <= 100; a+=2)
+	{
+		printf("%d\n",a);
+	}
+	for (;;)
+	{
+		printf("我爱你\n");
+	}
+	return 0;
+}
