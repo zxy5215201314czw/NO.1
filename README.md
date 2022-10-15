@@ -497,3 +497,20 @@ int main()
 	} while (a < 10000);
 	return 0;
 }
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	int a = 0;
+	int n = 0;
+	int z = 1;
+	scanf("%d",&n);
+	for (a = 1; a <= n; a++)
+	{
+		z = z * a;
+
+	}
+	printf("z=%d\n",z);
+	return 0;
+}
