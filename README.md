@@ -482,3 +482,18 @@ int main()
 	}
 	return 0;
 }
+
+	#include<stdio.h>
+#include<string.h>
+int main()
+{
+	int a = 0;
+	int b = 0;
+	do
+	{
+		printf("我爱你一万遍也不够%d\n", a);
+		a++;
+
+	} while (a < 10000);
+	return 0;
+}
