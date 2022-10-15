@@ -613,3 +613,26 @@ int main()
 	return 0;
 }
 
+#include<stdio.h>
+#include<string.h>
+#include<windows.h>
+#include<stdlib.h>
+int main()
+{
+	char love[] = "I  LOVE  YOU  !!!!!!";
+	char loce[] = "####################";
+	int left = 0;
+	int right = strlen(love)-1;
+	while (left <= right)
+	{
+		loce[left] = love[left];
+		loce[right] = love[right];
+		printf("%s\n",loce);
+		Sleep(1000);
+		system("cls");
+		left++;
+		right--;	
+	}
+	printf("%s\n", loce);
+	return 0;
+}
