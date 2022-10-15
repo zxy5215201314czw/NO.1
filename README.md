@@ -636,3 +636,36 @@ int main()
 	printf("%s\n", loce);
 	return 0;
 }
+
+#include<stdio.h>
+#include<string.h>
+#include<windows.h>
+#include<stdlib.h>
+int main()
+{
+	int  a = 0;
+	char password[20] = { 0 };
+	for (a = 0; a < 3; a++)
+	{
+		printf("请输入密码\n");
+		Sleep(3000);
+		system("cls");
+		printf("TMD磨磨唧唧的跟娘们一样\n");
+		Sleep(3000);
+		system("cls");
+		printf("艹，赶紧的输入密码：\n");
+		scanf("%s", password);
+		if (strcmp(password, "我爱你") == 0)
+		{
+			printf("TMD多简单个事，早输不早结束了吗，艹\n");
+			break;
+		}
+		else
+			printf("TMD你输的什么玩意儿，艹\n");
+	}
+	if (a == 3)
+		printf("艹，有煞笔，快跑！！！！\n");
+	Sleep(3000);
+	system("cls");
+	return 0;
+	}
