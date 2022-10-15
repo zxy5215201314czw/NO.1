@@ -582,3 +582,32 @@ int main()
 
 	return 0;
 }
+
+			  #include<stdio.h>
+#include<string.h>
+int main()
+{
+	int a = 0;
+	int b = 0;
+	int love[] = { 1,2,3,4,5,6,7,8,9,10 };
+	scanf("%d", &a);
+	int x = sizeof(love) / sizeof(love[0]);
+	int left = 0;
+	int right = x-1;
+	while (a<10)
+	{
+		int c = (left + right) / 2;
+		if (love[c] > a)
+		{
+			right = c - 1;
+		}
+		else if (love[c] < a)
+		{
+			left = c + 1;
+		}
+		else
+			printf("你TM输入的什么玩意====%d\n",c);
+		break;
+	}
+	return 0;
+}
