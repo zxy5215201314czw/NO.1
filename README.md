@@ -557,3 +557,28 @@ int main()
 	printf("x=%d\n", x);
 	return 0;
 }
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	int love[] = { 1,2,3,4,5,6,7,8,9,10,56,61,16,6,16,1,61,61,6,6,49,4,64,684,687,8, };
+	int a = 0;
+	int b = 0;
+	int x = 0;
+	scanf("%d", &a);
+	int c = sizeof(love) / sizeof(love[0]);
+	for (b = 0; b < c; b++)
+	{
+		if (a == love[b])
+		{
+			printf("我看到你了\n");
+			break;
+		}
+	}
+	if (b == c)
+		printf("午时已到\n");
+
+
+	return 0;
+}
