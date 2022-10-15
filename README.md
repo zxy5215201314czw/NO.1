@@ -582,8 +582,7 @@ int main()
 
 	return 0;
 }
-
-			  #include<stdio.h>
+#include<stdio.h>
 #include<string.h>
 int main()
 {
@@ -594,7 +593,7 @@ int main()
 	int x = sizeof(love) / sizeof(love[0]);
 	int left = 0;
 	int right = x-1;
-	while (a<10)
+	while (left<=right)
 	{
 		int c = (left + right) / 2;
 		if (love[c] > a)
@@ -609,5 +608,8 @@ int main()
 			printf("你TM输入的什么玩意====%d\n",c);
 		break;
 	}
+	if (a >= 10)
+		printf("去你妈的找不到啊\n");
 	return 0;
 }
+
