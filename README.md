@@ -669,3 +669,164 @@ int main()
 	system("cls");
 	return 0;
 	}
+
+#define  _CRT_SECURE_NO_WARNINGS 1           //计算n的阶乘
+#include<stdio.h>
+#include<string.h>
+#include<windows.h>          
+#include<stdlib.h>
+#include<math.h>
+//int main()
+//{
+//	int a = 0;
+//	int b = 0;
+//	for (a = 1; a <= 9; a++)
+//	{
+//		for (b = 1; b <=a; b++)
+//		{
+//			printf("%d*%d=%2d ", a, b, a * b);
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+//int main()
+//{
+//	double a = 1.0;
+//	int b = 0;
+//	double z = 0.0;
+//	double x = 0.0;
+//	int t = 1;
+//	for (b = 1; b <= 100; b++)
+//	{
+//		z = a / b;
+//		x +=t* z;
+//		t = -t;
+//	}
+//	printf("x=%f\n", x);
+//	return 0;
+//}
+//int main()
+//{
+//	int a = 0;
+//	int b = 0;
+//	for (a = 1; a <= 100; a++)
+//	{
+//		if ((a % 10 == 9) || (a / 9 == 10))
+//		{
+//			printf("%d\n", a);
+//			b++;
+//		}
+//	}
+//	printf("b=%d", b);
+//	return 0;
+//}
+////int main()
+//{
+//	int a = 0;
+//	int b = 0;
+//	int c = 0;
+//	for (a = 101; a <= 200; a+=2)
+//	{
+//		for (b = 2; b <= sqrt(a) ; b++)
+//		{
+//			if (a % b == 0)
+//				break;
+//		}
+//		if(b>sqrt(a))
+//		{ 
+//			printf("%d\n", a);
+//			c++;
+//		}
+//	}
+//	printf("%d\n", c);
+//	return 0;
+//}
+//int main()
+//{
+//	int a = 0;
+//	int b = 0;
+//	for (a = 1000; a <= 2000; a++)
+//	{
+//		if (((a % 4 == 0) && (a % 100 != 0)) || (a % 400 == 0))
+//		{
+//			printf("%d\n", a);
+//			b++;
+//		}
+//	}
+//	printf("b=%d\n", b);
+//	return 0;
+//}
+//int main()
+//{
+//	int a = 0;
+//	int b = 0;
+//	for (a = 1000; a <= 2000; a++)
+//	{
+//		if (a % 4 == 0 && a % 100 != 0)
+//		{
+//			printf("%d\t", a);
+//			b++;
+//		}
+//		else if (a % 400 == 0)
+//		{
+//			printf("%d\t", a);
+//			b++;
+//		}
+//	}
+//	printf("%d\n", b);
+//	return 0;
+//}
+//int main()
+//{
+//	int a = 0;
+//	int b = 0;
+//	int c = 0;
+//	scanf("%d%d", &a, &b);
+//	while (a % b)
+//	{
+//		c = a % b;
+//		a = b;
+//		b = c;
+//	}
+//	printf("%d\n", b);
+//	return 0;
+//}
+//int main()
+//{
+//	int a = 0;
+//	for (a = 0; a < 100; a +=3)
+//	{
+//		printf("%d\n", a);
+//	 
+//	}
+//	
+//	return 0;
+//}
+//int  main()
+//{
+//	int a = 0;
+//	int b = 0;
+//	int c = 0;
+//	scanf("%d%d%d", &a, &b, &c);
+//	if (a < b)
+//	{
+//		int stand = a;
+//		a = b;
+//		b = stand;
+//	}
+//	if (a < c)
+//	{
+//		int stand = a;
+//		a = c;
+//		c = stand;
+//	}
+//	if (b < c)
+//	{
+//		int stand = b;
+//		b = c;
+//		c = stand;
+//	}
+//	printf("%d%d%d", a, b, c);
+//	return 0;
+//}
