@@ -830,3 +830,101 @@ int main()
 //	printf("%d%d%d", a, b, c);
 //	return 0;
 //}
+
+	#define  _CRT_SECURE_NO_WARNINGS 1           //计算n的阶乘    //游戏  至少进行一次循环 进入后有多种选项
+#include<stdio.h>
+#include<string.h>
+#include<windows.h>
+#include<stdlib.h>
+#include<math.h>
+void hs1()
+{
+	printf("****************************************\n");
+	printf("****************************************\n");
+	printf("*********   欢迎来到我的心里   *********\n"); 
+	printf("*********     请问你爱我吗     *********\n");
+	printf("*********  1.爱我    0.不爱我  *********\n");
+	printf("****************************************\n");
+	printf("****************************************\n");
+}
+
+int main()
+{ 
+	int a = 1;
+	int i = 0;
+	do
+	{
+		hs1();
+		scanf("%d", &a);
+		system("cls");
+		switch (a)
+		{
+		default:
+			printf("好家伙，薛定谔的爱我是吧");
+			break;
+		case 1:
+		{
+			int b = 0;
+			printf("我把我自己丢在了冬至\n");
+			Sleep(2000);
+			printf("你愿意陪我把它找出来么\n");
+			Sleep(2000);
+			printf("**************************\n");
+			printf("***  1.愿意  0.不愿意 ****\n");
+			printf("**************************\n");
+			scanf("%d", &b);
+			system("cls");
+			switch (b)
+			{
+			case 1:
+				printf("感谢你愿意陪我走这一段路程\n");
+				Sleep(2000);
+				system("cls");
+				printf("我想你会是那个让我重新获得爱的人\n");
+				Sleep(2000);
+				break;
+			case 0:
+				printf("好吧好吧，就当你是个梦吧\n");
+				Sleep(2000);
+				break;
+			default:
+				break;
+			}
+
+		}
+			break;
+		case 0:
+			printf("为什么啊，因为我不够优秀么\n");
+			Sleep(5000);
+			{
+				printf("**************************\n");
+				printf("***  1.是的  0.不是的 ****\n");
+				printf("**************************\n");
+				int c = 0;
+				scanf("%d", &c);
+				system("cls");
+				switch (c)
+				{
+				case 1:
+					printf("我知道了\n");
+					Sleep(2000);
+					printf("我仍感谢你能走进我心里\n");
+					Sleep(2000);
+					printf("我会变的优秀然后来找你\n");
+					Sleep(2000);
+					break;
+				case 0:
+					printf("我知道了，我仍感谢你给我的心动\n");
+					Sleep(2000);
+					break;
+				default:
+					break;
+				}
+			}
+		
+		}
+		i++;
+	} while (i!=0);
+	return 0;
+
+}
