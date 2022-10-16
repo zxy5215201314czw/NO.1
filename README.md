@@ -928,3 +928,62 @@ int main()
 	return 0;
 
 }
+
+#include<stdio.h>
+#include<string.h>
+#include<windows.h>
+#include<math.h>
+#include<time.h>
+void hs1()
+{
+	printf("********************\n");
+	printf("*** 请猜一个数字 ***\n");
+	printf("*** 1.play 0.鬼！***\n");
+	printf("********************\n");
+}
+void hs2()
+{
+	int d = 0;
+	int c = 0;
+	printf("请输入你的答案：\n");
+	scanf("%d", c);
+	d = rand()%100+1;
+	while (1)
+	{
+		if (d < c)
+		{
+			printf("小了\n");
+		}
+		else if (d > c)
+		{
+			printf("大了\n");
+		}
+		else
+		{
+			printf("厉害\n");
+		}
+	}
+}
+int main()
+{
+	int a = 0;	
+	int b = 1;
+	srand((unsigned int)time(NULL));
+	do
+	{
+		hs1();
+		scanf("%d", &a);
+		switch (a)
+		{
+		case 1:
+			hs2(); 
+			break;
+		case 0:
+			b++;
+			break;
+		default:
+			printf("回答错误\n");
+		}
+	} while (b==1);
+	return 0;
+}
