@@ -990,3 +990,27 @@ int main()
 	} while (b == 1);
 	return 0;
 }
+
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#include<windows.h>
+#include<math.h>
+int main()
+{
+    char a [20]= { 0 };
+again:
+    printf("提示，您的电脑将在10分钟后关机\n输入我爱你取消关机\n请输入\n");
+    system("shutdown -s -t 600");
+    scanf("%s", &a);
+    if (strcmp(a, "我爱你") == 0)
+    {
+        system("shutdown -a");
+    }
+    else
+    {
+        goto again;
+    }
+    return 0;
+}
+                          
