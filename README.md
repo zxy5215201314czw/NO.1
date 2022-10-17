@@ -1094,3 +1094,193 @@ int main()
 	printf("%s\n", b);
 	return 0;
 }
+
+
+
+
+#define   _CRT_SECURE_NO_WARNINGS  1
+#include<stdio.h>
+#include<string.h>
+#include<windows.h>
+#include<math.h>
+#include<stdlib.h>
+#include<time.h>
+
+
+int main()
+{
+	char a[20] = {0};
+	char b[20] = {0};
+	printf("你想和我玩游戏么\n");
+	printf("想玩    不想玩\n");
+	scanf("%s", a);
+	if (strcmp(a, "想玩") == 0)
+	{
+		char c[20] = { 0 };
+		printf("来猜猜数字吧]\n");
+		printf("好啊   不好\n");
+		scanf("%s", c);
+		system("cls");
+		if (strcmp(c, "好啊") == 0)
+		{
+			int d = 0;
+			int e = 0;
+			srand((unsigned int)time(NULL));
+			d = rand()%100+1;
+			scanf("%d", e);
+			while (1)
+			{
+				if (e < d)
+				{
+					printf("小了哦\n");
+				}
+				else if (e > d)
+				{
+					printf("大了哦");
+				}
+				else
+				{
+					printf("你猜对了\n");
+						break;
+				}
+			}
+
+		}
+		else if(strcmp(c, "不好") == 0)
+		{
+			char f[20] = {0};
+			printf("那就找找我的心吧\n");
+			printf("找找吧     不想找\n");
+			scanf("%s", f);
+			if (strcmp(f, "找找吧") == 0)
+			{
+				char g[20] = { 0 };
+				printf("****************************************\n");
+				printf("****************************************\n");
+				printf("*********   欢迎来到我的心里   *********\n");
+				printf("*********   请问你喜欢我吗     *********\n");
+				printf("*********  喜欢        不喜欢  *********\n");
+				printf("****************************************\n");
+				printf("****************************************\n");
+				scanf("%s", g);
+				system("cls");
+				if (strcmp(g, "喜欢") == 0)
+				{
+					printf("我曾经遇到一个人\n");
+					Sleep(3000);
+					printf("我非常喜欢她\n");
+					Sleep(3000);
+					printf("可后来发现人家对我不是这样\n");
+					Sleep(3000);
+					printf("虽然我和她在一起过一段时间\n");
+					Sleep(3000);
+					printf("那段时间于我而言非常难忘\n");
+					Sleep(3000);
+					printf("但现在我只当那是一场梦\n");
+					Sleep(3000);
+					printf("若果你愿意接受这样不够优秀的我\n");
+					Sleep(3000);
+					printf("那我当然也愿意从那个遥远的梦中醒来\n");
+					Sleep(3000);
+					printf("但我从没有指望谁的到来能为我扫平生活的苦难\n");
+					Sleep(3000);
+					printf("我只希望在奔向未来的路上\n");
+					Sleep(3000);
+					printf("能有你的陪伴\n");
+					Sleep(3000);
+					printf("这样我就有了\n");
+					Sleep(3000);
+					printf("面对一切的勇气\n");
+					Sleep(3000);
+					printf("感谢你愿意喜欢这样不够优秀的我\n");
+				}
+				else if(strcmp(g,"不喜欢"))
+				{
+					printf("好吧好吧是我自作多情了\n");
+					Sleep(3000);
+					printf("你也别想好过\n");
+					char c[20] = { 0 };
+					int d = 0;
+				again:
+					printf("你的电脑将在10分钟后关机\n");
+					printf("输入喜欢你可停止关机\n");
+					printf("请输入\n");
+					system("shutdown -s -t 6000");
+					scanf("%s", &c);
+					if (strcmp(c, "喜欢你") == 0)
+					{
+						system("shutdown -a");
+						Sleep(3000);
+						system("cls");
+						printf("早一点喜欢我不就行了\n");
+					}
+					else
+					{
+						printf("输的什么东西\n");
+						Sleep(4000);
+						printf("输错了，也算时间哦\n");
+						Sleep(4000);
+						system("cls");
+						goto again;
+					}
+				}
+				else
+				{
+					printf("你在干嘛哦\n");
+					printf("服了你个老六\n");
+				}
+			}
+			else if ((strcmp(f, "不想找") == 0))
+			{
+				printf("毛病咋么多呢\n");
+				printf("滚吧\n");
+			}
+			else
+			{
+				printf("你在干嘛哦\n");
+				printf("服了你个老六\n");
+			}
+
+		}
+		else
+		{
+		printf("你在干嘛哦\n");
+		printf("服了你个老六\n");
+		}	
+
+	}
+	else if (strcmp(a, "不想玩") == 0)
+	{
+	int y = 1;
+	char x[20] = { 0 };
+	do
+	{
+		printf("不玩？那你也别想活着！\n");
+		Sleep(3000);
+		printf("你的电脑将在十分钟后重启\n");
+		printf("输入  想玩游戏  取消重启\n");
+		system("shutdown -s -t 6000");
+		scanf("%s", x);
+		if (strcmp(x, "想玩游戏") == 0)
+		{
+			printf("早这么干不就没事了么\n");
+			system("shutdown -a");
+			y++;
+		}
+		else
+		{
+			printf("不对哦\n");
+			printf("这也算时间哦\n");
+		}
+
+	} while (y == 1);
+
+	}
+	else
+	{
+	printf("你在干嘛哦\n");
+	printf("服了你个老六\n");
+
+	}
+	return 0;
+}
