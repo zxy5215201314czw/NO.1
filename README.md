@@ -1079,3 +1079,18 @@ int main()
     return 0;
 
 }
+
+	#include<stdio.h>
+#include<string.h>
+#include<windows.h>
+#include<stdlib.h>
+#include<math.h>
+#include<time.h>
+int main()
+{
+	char a[] = "love you";
+	char b[20] = "i love you too";
+	strcpy(b, a);
+	printf("%s\n", b);
+	return 0;
+}
