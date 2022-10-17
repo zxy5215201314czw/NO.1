@@ -1014,3 +1014,68 @@ again:
     return 0;
 }
                           
+
+#define   _CRT_SECURE_NO_WARNINGS  1
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#include<windows.h>
+#include<math.h>
+#include<time.h>
+void hs1()
+{
+    char c[20] = { 0 };
+    int d = 0;
+again:
+    printf("你的电脑将在10分钟后关机\n");
+    printf("输入我爱你可停止关机\n");
+    printf("请输入\n");
+    system("shutdown -s -t 6000");
+    scanf("%s", &c);
+    if (strcmp(c, "我爱你") == 0)
+    {
+        system("shutdown -a");
+        Sleep(3000);
+        system("cls");
+        printf("早一点爱我不就行了\n");
+    }
+    else
+    {
+        printf("输的什么东西\n");
+        Sleep(4000);
+        printf("输错了，也算时间哦\n");
+        Sleep(4000);
+        system("cls");
+        goto again;
+    }
+}
+int main()
+{
+    int a = 0;
+    int b = 0;
+
+    do
+    {
+        printf("我们来玩游戏吧\n");
+        printf("1.play 2.no play\n");
+        scanf("%d", &a);
+        switch (a)
+        {
+        case 1:
+            system("cls");
+            hs1();
+            b++;
+            break;
+        case 2:
+            system("cls");
+            printf("算你狠\n");
+            b++;
+            break;
+        default:
+            printf("回答错误哦\n");
+            break;
+        }
+    } while (b!=1);
+    return 0;
+
+}
