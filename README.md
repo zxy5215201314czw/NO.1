@@ -1097,7 +1097,6 @@ int main()
 
 
 
-
 #define   _CRT_SECURE_NO_WARNINGS  1
 #include<stdio.h>
 #include<string.h>
@@ -1105,12 +1104,43 @@ int main()
 #include<math.h>
 #include<stdlib.h>
 #include<time.h>
+void hs1()
+{
+	printf("********************\n");
+	printf("*** 请猜一个数字 ***\n");
+	printf("*** 1.play 0.不玩***\n");
+	printf("********************\n");
+}
+void hs2()
+{
+	int d = 0;
+	int c = 0;
+	d = rand() % 100 + 1;
+	while (1)
+	{
+		printf("请输入你的答案：\n");
+		scanf("%d", &c);
+		if (c < d)
+		{
+			printf("小了\n");
 
+		}
+		else if (c > d)
+		{
+			printf("大了\n");
 
+		}
+		else
+		{
+			printf("厉害\n");
+			break;
+		}
+	}
+}
 int main()
 {
-	char a[20] = {0};
-	char b[20] = {0};
+	char a[20] = { 0 };
+	char b[20] = { 0 };
 	printf("你想和我玩游戏么\n");
 	printf("想玩    不想玩\n");
 	scanf("%s", a);
@@ -1123,32 +1153,30 @@ int main()
 		system("cls");
 		if (strcmp(c, "好啊") == 0)
 		{
-			int d = 0;
-			int e = 0;
+			int a = 0;
+			int b = 1;
 			srand((unsigned int)time(NULL));
-			d = rand()%100+1;
-			scanf("%d", e);
-			while (1)
+			do
 			{
-				if (e < d)
+				hs1();
+				scanf("%d", &a);
+				switch (a)
 				{
-					printf("小了哦\n");
+				case 1:
+					hs2();
+					break;
+				case 0:
+					b++;
+					break;
+				default:
+					printf("输错了吧\n");
 				}
-				else if (e > d)
-				{
-					printf("大了哦");
-				}
-				else
-				{
-					printf("你猜对了\n");
-						break;
-				}
-			}
-
+			} while (b == 1);
+			
 		}
-		else if(strcmp(c, "不好") == 0)
+		else if (strcmp(c, "不好") == 0)
 		{
-			char f[20] = {0};
+			char f[20] = { 0 };
 			printf("那就找找我的心吧\n");
 			printf("找找吧     不想找\n");
 			scanf("%s", f);
@@ -1194,7 +1222,7 @@ int main()
 					Sleep(3000);
 					printf("感谢你愿意喜欢这样不够优秀的我\n");
 				}
-				else if(strcmp(g,"不喜欢"))
+				else if (strcmp(g, "不喜欢")==0)
 				{
 					printf("好吧好吧是我自作多情了\n");
 					Sleep(3000);
@@ -1205,7 +1233,7 @@ int main()
 					printf("你的电脑将在10分钟后关机\n");
 					printf("输入喜欢你可停止关机\n");
 					printf("请输入\n");
-					system("shutdown -s -t 6000");
+					system("shutdown -s -t 600");
 					scanf("%s", &c);
 					if (strcmp(c, "喜欢你") == 0)
 					{
@@ -1244,42 +1272,42 @@ int main()
 		}
 		else
 		{
-		printf("你在干嘛哦\n");
-		printf("服了你个老六\n");
-		}	
+			printf("你在干嘛哦\n");
+			printf("服了你个老六\n");
+		}
 
 	}
 	else if (strcmp(a, "不想玩") == 0)
 	{
-	int y = 1;
-	char x[20] = { 0 };
-	do
-	{
-		printf("不玩？那你也别想活着！\n");
-		Sleep(3000);
-		printf("你的电脑将在十分钟后重启\n");
-		printf("输入  想玩游戏  取消重启\n");
-		system("shutdown -s -t 6000");
-		scanf("%s", x);
-		if (strcmp(x, "想玩游戏") == 0)
+		int y = 1;
+		char x[20] = { 0 };
+		do
 		{
-			printf("早这么干不就没事了么\n");
-			system("shutdown -a");
-			y++;
-		}
-		else
-		{
-			printf("不对哦\n");
-			printf("这也算时间哦\n");
-		}
+			printf("不玩？那你也别想活着！\n");
+			Sleep(3000);
+			printf("你的电脑将在十分钟后重启\n");
+			printf("输入  想玩游戏  取消重启\n");
+			system("shutdown -s -t 600");
+			scanf("%s", x);
+			if (strcmp(x, "想玩游戏") == 0)
+			{
+				printf("早这么干不就没事了么\n");
+				system("shutdown -a");
+				y++;
+			}
+			else
+			{
+				printf("不对哦\n");
+				printf("这也算时间哦\n");
+			}
 
-	} while (y == 1);
+		} while (y == 1);
 
 	}
 	else
 	{
-	printf("你在干嘛哦\n");
-	printf("服了你个老六\n");
+		printf("你在干嘛哦\n");
+		printf("服了你个老六\n");
 
 	}
 	return 0;
