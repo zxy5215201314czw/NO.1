@@ -1340,3 +1340,11 @@ int main()
 	printf("较大的是%d\n",z);
 	return 0;
 }
+
+		  int main()
+{
+	char A[20] = "NMMP";
+	memset(A, '*', 4);
+	printf("%s\n", A);
+	return 0;
+}
