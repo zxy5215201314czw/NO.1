@@ -1532,3 +1532,39 @@ int main()
 //	printf("早这么干不就完了\n");
 //	return 0;
 //}
+ 
+ #include<stdio.h>
+#include<string.h>
+#include<math.h>
+#include<stdlib.h>
+#include<time.h>
+#include<windows.h>
+//void love(int n)
+//{
+//	if (n > 9)
+//	{
+//		love(n / 10);
+//	}
+//	printf("%d ", n % 10);
+//}
+//int main()
+//{
+//	unsigned int A = 0;
+//	scanf("%d", &A);
+//	love(A);
+//	return 0;
+//}
+//
+
+//
+//int a = 0;
+//
+//int main()
+//{
+//	printf("谢谢你为我的昏暗的生活带来一丝阴霾\t");
+//	a++;
+//	if (a < 10)
+//		main();
+//	else
+//		return 0;
+//}
