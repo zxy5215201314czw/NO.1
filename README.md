@@ -1312,3 +1312,31 @@ int main()
 	}
 	return 0;
 }
+
+#include<stdio.h>
+#include<string.h>
+#include<math.h>
+#include<windows.h>
+#include<time.h>
+#include<stdlib.h>
+int MAX(int x, int y)
+{
+	int a = 0;
+	if (x < y)
+	{
+		a = y;
+	}
+	else
+	{
+		a = x;
+	}
+	return a;
+}
+int main()
+{
+	int g = 20;
+	int u = 50;
+	int z=MAX(g,u);
+	printf("较大的是%d\n",z);
+	return 0;
+}
