@@ -1348,3 +1348,23 @@ int main()
 	printf("%s\n", A);
 	return 0;
 }
+
+void love(int *x, int *y)
+{
+	int z = 0;
+	z = *x;
+	*x = *y;
+	*y = z;
+}
+int main()
+{
+	int a = 0;
+	int b = 0;
+	printf("请输入两个数\n");
+	scanf("%d   %d", &a, &b);
+	printf("%d %d\n", a, b);
+	love(&a,&b);
+	printf("%d %d\n", a, b);
+	return 0;
+}
+
