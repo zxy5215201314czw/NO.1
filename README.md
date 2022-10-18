@@ -1568,3 +1568,22 @@ int main()
 //	else
 //		return 0;
 //}
+
+
+//int love(char* a)
+//{
+//	int b = 0;
+//	while (*a != '\0')
+//	{
+//		b++;
+//		a++;
+//	}
+//	return b;
+//}
+//int main()
+//{
+//	char arr[] = "NMMP";
+//	int A = love(arr);
+//	printf("A=%d", A);
+//}
+//
