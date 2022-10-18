@@ -1368,3 +1368,167 @@ int main()
 	return 0;
 }
 
+
+#define   _CRT_SECURE_NO_WARNINGS  1
+#include<stdio.h>
+#include<string.h>
+#include<windows.h>
+#include<math.h>
+#include<stdlib.h>
+#include<time.h>
+//void ADD(int* a)
+//{
+//	(*a)++;
+//}
+//int main()
+//{
+//	int num = 0;
+//	ADD(&num);
+//	printf("num=%d", num);
+//	int num = 0;
+//	ADD(&num);
+//	printf("num=%d", num);
+//	int num = 0;
+//	ADD(&num);
+//	printf("num=%d", num);
+//	int num = 0;
+//	ADD(&num);
+//	printf("num=%d", num);
+//	return 0;
+//}
+//int MAX(int x, int y)
+//{
+//	if (x < y)
+//	{
+//		return x;
+//	}
+//	else
+//	{
+//		return y;
+//	}
+//}
+//int main()
+//{
+//	int num = 0;
+//	int a = 0;
+//	int b = 0;
+//	int c = 0;
+//	scanf("%d  %d", &a, &b);
+//	c = MAX(a, b);
+//	while (1)
+//	{
+//		if (c != 0)
+//			num++;
+//		if (num == 100)
+//			break;
+//	}
+//	return 0;
+//}
+////int love(int A[], int y,int X)
+//{
+//	int left = 0;
+//	int right = X - 1;
+//	while (left<=right)
+//	{   
+//		int Y = (right + left) / 2;
+//		if (y < A[Y])
+//		{
+//			right = Y - 1;
+//		}
+//		else if(y>A[Y])
+//		{
+//			left = Y + 1;
+//		}
+//		else
+//		{
+//			return Y;
+//		}
+//	}
+//	return -1;
+//}
+//int main()
+//{
+//	int A[] = { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 };
+//	int a = 0;
+//	int b = 0;
+//	scanf("%d", &a);
+//	int X = sizeof(A) / sizeof(A[0]);
+//	int c = love(A, a, X);
+//	if (c == -1)
+//	{
+//		printf("输的什么够吧，找不到\n");
+//	}
+//	else
+//	{
+//		printf("找到了，下标是%d\n", c);
+//	}
+//	return 0;
+//}
+//int love(int x)
+//{
+//	if (((x % 4 == 0) && (x % 100 != 0)) || (x %400 == 0))
+//		return 1;
+//	else
+//		return 0;
+//}
+//int main()
+//{
+//	int a = 0;
+//	scanf("%d", &a);
+//	if (love(a) == 1)
+//	{
+//		printf("这是一个闰年%d\n", a);
+//	}
+//	else
+//		printf("这不是一个闰年\n");
+//	return 0;
+//}
+//int love(int x)
+//{
+//	int z = 0;
+//	for (z = 2; z <=sqrt(x); z++)
+//	{
+//		if (x % z == 0)
+//			return 0;
+//	}
+//	return 1;
+//}
+//int main()
+//{
+//	int a = 0;
+//	for (a = 100; a <= 200; a++)
+//	{
+//		if (love(a) == 1)
+//			printf("%d ", a);
+//	}
+//	return 0;
+//}
+//int hs1(int x, int y)
+//{
+//	if (x < y)
+//	{
+//		x = y;
+//		return y;
+//	}
+//	else
+//		return x;
+//	
+//}
+//int main()
+//{
+//	printf("输入三个数，我可以帮你找到它们最大的那个\n");
+//	Sleep(2000);
+//	printf("TMD，快点啊\n");
+//	Sleep(1000);
+//	printf("真墨迹\n");
+//	int a = 0;
+//	int b = 0;
+//	int c = 0;
+//	scanf("%d %d %d", &a,&b,&c);
+//	system("cls");
+//	int d = hs1(a, hs1(b, c));
+//	printf("较大的是%d\n", d);
+//	Sleep(2000);
+//	printf("早这么干不就完了\n");
+//	return 0;
+//}
