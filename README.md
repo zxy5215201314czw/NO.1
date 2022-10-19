@@ -1587,3 +1587,22 @@ int main()
 //	printf("A=%d", A);
 //}
 //
+
+		   
+		   int love(char* n)
+{
+	if (*n != '\0')
+	{
+		n++;
+		return 1 + love(n);
+	}
+	else
+		return 0;
+}
+int main()
+{
+	char A[] = "NMMP";
+	int a = love(A);
+	printf("%d\n", a);
+	return 0;
+}
