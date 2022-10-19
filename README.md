@@ -1606,3 +1606,21 @@ int main()
 	printf("%d\n", a);
 	return 0;
 }
+
+int love(char* n)
+{
+	if (*n != '\0')
+	{
+		
+		return 1+love(n+1);
+	}
+	else
+	return 0;
+}
+int main()
+{
+	char A[] = "一二三";
+	int B = love(A);
+	printf("B=%d\n", B);
+	return 0;
+}
