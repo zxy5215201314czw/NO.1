@@ -1624,3 +1624,93 @@ int main()
 	printf("B=%d\n", B);
 	return 0;
 }
+
+		   #include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#include<windows.h>
+#include<math.h>
+#include<time.h>  // 1 1 2 3 5
+int loce(int n)
+{
+	int a = 1;
+	int b = 1;
+	int c = 1;
+	while (n > 2)
+	{
+		c = a + b;
+		a = b;
+		c = b;
+		n--;
+	}
+	return c;
+}
+int love(int i)
+{
+	if (i <= 2)
+	{
+		return 1;
+	}
+	else
+	{
+		return love(i - 1) + love(i - 2);
+	}
+}
+int main()
+{
+	int n = 0;
+	scanf("%d", &n);
+	int a = love(n);
+	printf("%d\n", a);
+	return 0;
+}
+
+
+//int hs1(int n)
+//{
+//	int x = 1;
+//	int i = 0;
+//	for (i = 1; i <= n; i++)
+//	{	
+//		x *= i;
+//	}
+//	return x;
+//}
+//int love_me(int z)
+//{
+//	if (z <= 1)
+//	{
+//		return 1;
+//	}
+//	else
+//	{
+//		return z * (love_me(z - 1));
+//	}
+//}
+//int main()
+//{
+//	int a = 0;
+//	char b[20] = {  };
+//	printf("输入一个数字来获得它的阶乘\n");
+//	scanf("%d", &a);
+//	printf("请选择你的函数\n");
+//	printf("hs1     love\n");
+//	scanf("%s", &b);
+//	if (strcmp(b, "hs1")==0)
+//	{
+//		int c=hs1(a);
+//		printf("%d\n", c);
+//		Sleep(2000);
+//		printf("其实它们答案一样\n");
+//	}
+//	else if (strcmp(b, "love")==0)
+//	{
+//		int d=love_me(a);
+//		printf("%d\n", d);
+//		Sleep(2000);
+//		printf("其实它们答案一样\n");
+//	}
+//	else
+//		printf("SB\n");
+//	return 0;
+//}
