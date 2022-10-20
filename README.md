@@ -1750,3 +1750,16 @@ int main()
 		printf("&love[%d]=%p\n", i, &love[i]);
 	return 0;
 }
+
+	int main()
+{
+	int a = 1;
+	int i = 1;
+	char love[] = "abcdef";
+	for(i=0;i<strlen(love);i++)
+	printf("%c  \n",love[i]);
+	int loce[] = { 1,2,3,4,5,6,7,8,9,10 };
+	for (a = 0; a < sizeof(loce) / sizeof(loce[0]); a++)
+		printf("%d  ", loce[a]);
+	return 0;
+}
