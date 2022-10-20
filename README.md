@@ -1714,3 +1714,49 @@ int main()
 //		printf("SB\n");
 //	return 0;
 //}
+
+
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#include<windows.h>
+#include<math.h>
+#include<time.h> 
+int main()
+{ 
+	int a = 0;
+	int b = 0;
+	int love[5][5] = { {1,2,3,4,5}, {6,7,8,9,0} };
+	for(a=1;a<5;a++)
+		for (a = 0; a < 5; a++)
+		{
+			for (b = 0; b < 5; b++)
+			{
+				printf("&love[%d][%d]=%p\n",a,b, &love[a][b]);
+			}
+			printf("\n");
+		}
+	return 0;
+}
+
+
+int main()
+{
+	int a = 1;
+	int i = 1;
+	char love[] = "abcdef";
+	for(i=0;i<strlen(love);i++)
+	printf("%c  \n",love[i]);
+	int loce[] = { 1,2,3,4,5,6,7,8,9,10 };
+	for (a = 0; a < sizeof(loce) / sizeof(loce[0]); a++)
+		printf("%d  ", loce[a]);
+	return 0;
+}
+int main()
+{
+	int i = 0;
+	int love[] = { 1,2,3,4,5,6 };
+	for (i = 0; i < (sizeof(love) / sizeof(love[0])); i++)
+		printf("&love[%d]=%p\n", i, &love[i]);
+	return 0;
+}
