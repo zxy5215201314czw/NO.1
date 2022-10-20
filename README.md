@@ -1752,11 +1752,3 @@ int main()
 		printf("%d  ", loce[a]);
 	return 0;
 }
-int main()
-{
-	int i = 0;
-	int love[] = { 1,2,3,4,5,6 };
-	for (i = 0; i < (sizeof(love) / sizeof(love[0])); i++)
-		printf("&love[%d]=%p\n", i, &love[i]);
-	return 0;
-}
