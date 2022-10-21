@@ -1763,3 +1763,43 @@ int main()
 		printf("%d  ", loce[a]);
 	return 0;
 }
+
+#define   _CRT_SECURE_NO_WARNINGS  1
+#include<stdio.h>
+#include<string.h>
+#include<windows.h>
+#include<stdlib.h>
+#include<math.h>
+#include<time.h>
+void love(int arr[], int z)
+{
+	int x = 0;
+	int y = 0;
+	for (x = 0; x < z - 1; x++)
+	{
+		for (y = 0; y < z - 1 - x; y++)
+		{
+			if (arr[y] > arr[y + 1])
+			{
+				int Q = arr[y];
+				arr[y] = arr[y + 1];
+				arr[y + 1] = Q;
+			}
+		}
+
+	}
+}
+
+int main()
+{
+	int arr[] = { 9,8,7,6,5,4,3,2,1 };
+	int a = 0;
+	int z = sizeof(arr) / sizeof(arr[0]);
+	love(arr,z);
+	for (a = 0; a < z; a++)
+	{
+		printf("%d ", arr[a]);
+	}
+	return 0;
+
+}
