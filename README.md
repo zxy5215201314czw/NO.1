@@ -1777,6 +1777,7 @@ void love(int arr[], int z)
 	int y = 0;
 	for (x = 0; x < z - 1; x++)
 	{
+		int m = 1;
 		for (y = 0; y < z - 1 - x; y++)
 		{
 			if (arr[y] > arr[y + 1])
@@ -1784,15 +1785,17 @@ void love(int arr[], int z)
 				int Q = arr[y];
 				arr[y] = arr[y + 1];
 				arr[y + 1] = Q;
-			}
+				m=0;
+			}				
 		}
-
 	}
+	if (m = 1)
+		break;
 }
 
 int main()
 {
-	int arr[] = { 9,8,7,6,5,4,3,2,1 };
+	int arr[] = { 1,2,3,4,5,6,7,8,9 };
 	int a = 0;
 	int z = sizeof(arr) / sizeof(arr[0]);
 	love(arr,z);
