@@ -1806,3 +1806,16 @@ int main()
 	return 0;
 
 }
+
+
+
+#pragma once
+#define hang 3
+#define lie 3
+void dayinqipan(char qipan[hang][lie], int n, int m);
+void chushihuaqipan(char qipan[hang][lie], int a, int b);
+
+
+
+
+
