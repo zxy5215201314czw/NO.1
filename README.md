@@ -1858,4 +1858,46 @@ void dayinqipan(char qipan[hang][lie], int a, int b)
 
 }
 
-
+#define   _CRT_SECURE_NO_WARNINGS  1
+#include<stdio.h>
+#include"love.h"
+void test()
+{
+	printf("********************\n");
+	printf("***   来玩游戏   ***\n");
+	printf("*** 1.play 0.不玩***\n");
+	printf("********************\n");
+}
+void game()
+{
+	char qipan[hang][lie] = { 0 };
+	chushihuaqipan(qipan, hang, lie);
+	dayinqipan(qipan,hang,lie);
+}
+void jingziqi()
+{	
+	int a = 0;
+	do
+	{	
+	  	test();
+		printf("请选择：");
+	    scanf("%d", &a);
+		switch (a)
+		{
+		case 1:
+			game();
+			break;
+		case 0:
+			printf("不玩就不玩\n");
+			break;
+		default:
+			printf("？？？？？？？？\n");
+			break;
+		}
+	}while (a);
+}
+int main()
+{
+	jingziqi();
+	return 0;
+}
