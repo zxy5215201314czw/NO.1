@@ -1816,6 +1816,46 @@ void dayinqipan(char qipan[hang][lie], int n, int m);
 void chushihuaqipan(char qipan[hang][lie], int a, int b);
 
 
+#define   _CRT_SECURE_NO_WARNINGS  1
+#include<stdio.h>
+#include"love.h"
+void chushihuaqipan(char qipan[hang][lie], int a, int b)
+{
+	int x = 0;
+	int y = 0;
+	for (x = 0; x < a; x++)
+	{
+		for (y = 0; y < b; b++)
+		{
+			qipan[x][y] = ' ';
+		}
+	}
+}
+void dayinqipan(char qipan[hang][lie], int a, int b)
+{
+	int n = 0;	
+	for (n = 0; n < a; n++)
+	{
+		int m = 0;
+		for (m = 0; m < b; m++)
+		{
+			printf(" %c ",qipan[n][m]);
+			if (m < b - 1)
+				printf("| ");		
+		}
+		printf("\n");
+		if (n < a - 1)
+		{
+			for (m = 0; m < b; m++)
+			{
+				printf("---");
+				if (m < b - 1)
+				printf("|");
+			}
+			printf("\n ");
+		}
+	}
 
+}
 
 
