@@ -2134,3 +2134,441 @@ char whowin(char qipan[hang][lie],int q,int w)
 		return 'C';
 }
 
+
+			  #define   _CRT_SECURE_NO_WARNINGS  1
+#include"love.h" //引入所设置的函数和数据
+void test()
+{
+	printf("********************\n");
+	printf("***   来玩游戏   ***\n");
+	printf("*** 1.play 0.不玩***\n");
+	printf("********************\n");
+}
+void game()
+{
+	char edg = 0;
+	char qipan[hang][lie] = { 0 };//设置棋盘
+	chushihuaqipan(qipan, hang, lie);//将棋盘的每个元素都初始化
+	dayinqipan(qipan,hang,lie);//将棋盘打印在电脑上
+	while (1)
+	{
+		playjingziqi(qipan, hang, lie);//玩家下棋
+		dayinqipan(qipan, hang, lie);//再次打印以展示棋盘
+		edg = whowin(qipan,hang,lie);
+		if (edg != 'C')
+		{
+			break;
+		}
+		computerplay(qipan, hang, lie);//电脑下棋
+		dayinqipan(qipan, hang, lie);//再次打印以展示棋盘
+		edg = whowin(qipan, hang, lie);
+		if (edg != 'C')
+		{
+			break;
+		}
+	}
+	if (edg == '*')
+	{
+		printf("这是你的胜利\n");
+	}
+	else if (edg == '#')
+	{
+		printf("有点可惜哦\n");
+	}
+	else if (edg == 'R')
+	{
+		printf("平局了\n");
+		Sleep(1000);
+		printf("不公平！不公平！重赛！重赛！\n");
+		printf("老子摆的就是烂！\n");
+		Sleep(2000);
+		printf("所以你不会放弃的对吗\n");
+	}
+}
+void jingziqi()
+{	
+	srand((unsigned int)time(NULL));
+	int a = 0;
+	do
+	{	
+	  	test();
+		printf("请选择：");
+        scanf("%d", &a);
+		switch (a)
+		{
+		case 1:
+			game();
+			break;
+		case 0:
+			printf("不玩就不玩\n");
+			break;
+		default:
+			printf("？？？？？？？？\n");
+			break;
+		}
+	}while (a);
+}
+int main()
+{
+	char l[20] = { 0 };
+	char c[20] = { 0 };
+	printf("你想和我玩游戏么\n");
+	printf("想玩    不想玩\n");
+	scanf("%s", l);
+	if (strcmp(l, "想玩") == 0)
+	{
+		char v[20] = { 0 };
+		printf("井字棋或者猜数字]\n");
+		printf(" 井字棋   猜数字 \n");
+		printf("不好\n")
+		scanf("%s", v);
+		system("cls");
+		if (strcmp(v, "猜数字") == 0)
+		{
+			int a = 0;
+			int b = 1;
+			srand((unsigned int)time(NULL));
+			do
+			{
+				hs1();
+				scanf("%d", &a);
+				switch (a)
+				{
+				case 1:
+					hs2();
+					break;
+				case 0:
+					b++;
+					break;
+				default:
+					printf("输错了吧\n");
+				}
+			} while (b == 1);
+
+		}
+		else if (strcmp(c, "不好") == 0)
+		{
+			char f[20] = { 0 };
+			printf("那就找找我的心吧\n");
+			printf("找找吧     不想找\n");
+			scanf("%s", f);
+			if (strcmp(f, "找找吧") == 0)
+			{
+				char g[20] = { 0 };
+				printf("****************************************\n");
+				printf("****************************************\n");
+				printf("*********   欢迎来到我的心里   *********\n");
+				printf("*********   请问你喜欢我吗     *********\n");
+				printf("*********  喜欢        不喜欢  *********\n");
+				printf("****************************************\n");
+				printf("****************************************\n");
+				scanf("%s", g);
+				system("cls");
+				if (strcmp(g, "喜欢") == 0)
+				{
+					printf("我曾经遇到一个人\n");
+					Sleep(3000);
+					printf("我非常喜欢她\n");
+					Sleep(3000);
+					printf("可后来发现人家对我不是这样\n");
+					Sleep(3000);
+					printf("虽然我和她在一起过一段时间\n");
+					Sleep(3000);
+					printf("那段时间于我而言非常难忘\n");
+					Sleep(3000);
+					printf("但现在我只当那是一场梦\n");
+					Sleep(3000);
+					printf("若果你愿意接受这样不够优秀的我\n");
+					Sleep(3000);
+					printf("那我当然也愿意从那个遥远的梦中醒来\n");
+					Sleep(3000);
+					printf("但我从没有指望谁的到来能为我扫平生活的苦难\n");
+					Sleep(3000);
+					printf("我只希望在奔向未来的路上\n");
+					Sleep(3000);
+					printf("能有你的陪伴\n");
+					Sleep(3000);
+					printf("这样我就有了\n");
+					Sleep(3000);
+					printf("面对一切的勇气\n");
+					Sleep(3000);
+					printf("感谢你愿意喜欢这样不够优秀的我\n");
+				}
+				else if (strcmp(g, "不喜欢") == 0)
+				{
+					printf("好吧好吧是我自作多情了\n");
+					Sleep(3000);
+					printf("你也别想好过\n");
+					char c[20] = { 0 };
+					int d = 0;
+				again:
+					printf("你的电脑将在10分钟后关机\n");
+					printf("输入喜欢你可停止关机\n");
+					printf("请输入\n");
+					system("shutdown -s -t 600");
+					scanf("%s", &c);
+					if (strcmp(c, "喜欢你") == 0)
+					{
+						system("shutdown -a");
+						Sleep(3000);
+						system("cls");
+						printf("早一点喜欢我不就行了\n");
+					}
+					else
+					{
+						printf("输的什么东西\n");
+						Sleep(4000);
+						printf("输错了，也算时间哦\n");
+						Sleep(4000);
+						system("cls");
+						goto again;
+					}
+				}
+				else
+				{
+					printf("你在干嘛哦\n");
+					printf("服了你个老六\n");
+				}
+			}
+			else if ((strcmp(f, "不想找") == 0))
+			{
+				printf("毛病咋么多呢\n");
+				printf("滚吧\n");
+			}
+			else
+			{
+				printf("你在干嘛哦\n");
+				printf("服了你个老六\n");
+			}
+
+		}
+		else if (strcmp(v, "井字棋") == 0)
+		{
+			printf("只有简单难度\n");
+			printf("可别输了\n");
+			Sleep(1000);
+			jingziqi()
+		}
+
+	}
+	else if (strcmp(a, "不想玩") == 0)
+	{
+		int y = 1;
+		char x[20] = { 0 };
+		do
+		{
+			printf("不玩？那你也别想活着！\n");
+			Sleep(3000);
+			printf("你的电脑将在十分钟后重启\n");
+			printf("输入  想玩游戏  取消重启\n");
+			system("shutdown -s -t 600");
+			scanf("%s", x);
+			if (strcmp(x, "想玩游戏") == 0)
+			{
+				printf("早这么干不就没事了么\n");
+				system("shutdown -a");
+				y++;
+			}
+			else
+			{
+				printf("不对哦\n");
+				printf("这也算时间哦\n");
+			}
+
+		} while (y == 1);
+
+	}
+	else
+	{
+		printf("你在干嘛哦\n");
+		printf("服了你个老六\n");
+
+	}
+	return 0;
+}
+			  #define   _CRT_SECURE_NO_WARNINGS  1
+#include"love.h"
+void chushihuaqipan(char qipan[hang][lie], int a, int b)
+{
+	int x = 0;
+	int y = 0;
+	for (x = 0; x < a; x++)
+	{
+		for (y = 0; y < b; y++)
+		{
+			qipan[x][y] = ' ';
+		}
+	}
+}
+void dayinqipan(char qipan[hang][lie], int a, int b)
+{
+	int n = 0;	
+	for (n = 0; n < a; n++)
+	{
+		int m = 0;
+		for (m = 0; m < b; m++)
+		{
+			printf(" %c ",qipan[n][m]);
+			if (m < b - 1)
+				printf("|");		
+		}
+		printf("\n");
+		if (n < a - 1)
+		{
+			for (m = 0; m < b; m++)
+			{
+				printf("---");
+				if (m < b - 1)
+				printf("|");
+			}
+			printf("\n");
+		}
+	}
+
+}
+void playjingziqi(char qipan[hang][lie], int j, int k)
+{
+	int x = 0;
+	int y = 0;
+	printf("请输入坐标\n");
+	Sleep(500);
+	printf("快点！！！！！！！\n");
+	while (1)
+	{	
+		printf("请输入>\n");
+		scanf("%d%d", &x, &y);
+		if (x >= 1 && x <=j && y >= 1 && y <=k)
+		{
+			if (qipan[x - 1][y - 1] == ' ')
+			{
+				qipan[x - 1][y - 1] = '*';
+				break;
+			}
+			else
+			{
+				printf("这里已经满员了\n");
+			}
+		}
+		else
+		{
+			printf("这里可没有座位\n");
+		}
+	}
+}
+void computerplay(char qipan[hang][lie], int o, int p)
+{
+	int x = 0;
+	int y = 0;
+	while (1)
+	{
+		printf("人工智障正在运行\n");
+		Sleep(1000);
+		printf("请不要着急\n");
+		Sleep(1000);
+		x = rand() % hang;
+		y = rand() % lie;
+		if (qipan[x][y] == ' ')
+		{
+			qipan[x][y] = '#';
+			break;
+		}
+	}
+}
+int pingju(char qipan[hang][lie], int e, int f)
+{
+	int x = 0;
+	for (x = 0; x < e; x++)
+	{
+		int y = 0;
+		for (y = 0; y < f; y++)
+		{
+			if (qipan[x][y] == ' ')
+			{
+				return 0;
+			}
+		}
+	}
+	return 1;
+}
+char whowin(char qipan[hang][lie],int q,int w)
+{
+	int x = 0;
+	for (x = 0; x < q; x++)
+	{
+		if (qipan[0][x] == qipan[1][x] && qipan[1][x] == qipan[2][x] && qipan[1][x] != ' ')
+		{
+			return qipan[1][x];
+		}
+
+	}
+	for (x = 0; x < w; x++)
+	{
+		 if (qipan[x][0] == qipan[x][1] && qipan[x][1] == qipan[x][2] && qipan[x][1] != ' ')
+		{
+			return qipan[x][1];
+		}
+	}
+	if (qipan[0][0] == qipan[1][1] && qipan[1][1] == qipan[2][2] && qipan[1][1] != ' ')
+	{
+		return qipan[1][1];
+	}
+    if (qipan[0][2] == qipan[1][1] && qipan[1][1] == qipan[2][0] && qipan[1][1] != ' ')
+	{
+		return qipan[1][1];
+	}
+	if (1 == pingju(qipan, hang, lie))
+	{
+		return 'R';
+	}
+	else
+		return 'C';
+}
+void hs1()
+{
+	printf("********************\n");
+	printf("*** 请猜一个数字 ***\n");
+	printf("*** 1.play 0.不玩***\n");
+	printf("********************\n");
+}
+void hs2()
+{
+	int d = 0;
+	int c = 0;
+	d = rand() % 100 + 1;
+	while (1)
+	{
+		printf("请输入你的答案：\n");
+		scanf("%d", &c);
+		if (c < d)
+		{
+			printf("小了\n");
+
+		}
+		else if (c > d)
+		{
+			printf("大了\n");
+
+		}
+		else
+		{
+			printf("厉害\n");
+			break;
+		}
+	}
+}
+#pragma once
+#include<stdio.h>
+#include<stdlib.h>
+#include<windows.h>
+#include<time.h>
+#include<string.h>
+#define hang 3
+#define lie 3
+void dayinqipan(char qipan[hang][lie], int n, int m);
+void chushihuaqipan(char qipan[hang][lie], int a, int b);
+void playjingziqi(char qipan[hang][lie], int j, int k);
+void computerplay(char qipan[hang][lie], int o, int p);
+char whowin(char qipan[hang][lie], int q, int w);
+int pingju(char qipan[hang][lie], int e,int f);
+void hs1()
+void hs2()
