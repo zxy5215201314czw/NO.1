@@ -1996,3 +1996,141 @@ int main()
 	return 0;
 }
 	
+#define   _CRT_SECURE_NO_WARNINGS  1
+#include"love.h"
+void chushihuaqipan(char qipan[hang][lie], int a, int b)
+{
+	int x = 0;
+	int y = 0;
+	for (x = 0; x < a; x++)
+	{
+		for (y = 0; y < b; y++)
+		{
+			qipan[x][y] = ' ';
+		}
+	}
+}
+void dayinqipan(char qipan[hang][lie], int a, int b)
+{
+	int n = 0;	
+	for (n = 0; n < a; n++)
+	{
+		int m = 0;
+		for (m = 0; m < b; m++)
+		{
+			printf(" %c ",qipan[n][m]);
+			if (m < b - 1)
+				printf("|");		
+		}
+		printf("\n");
+		if (n < a - 1)
+		{
+			for (m = 0; m < b; m++)
+			{
+				printf("---");
+				if (m < b - 1)
+				printf("|");
+			}
+			printf("\n");
+		}
+	}
+
+}
+void playjingziqi(char qipan[hang][lie], int j, int k)
+{
+	int x = 0;
+	int y = 0;
+	printf("请输入坐标\n");
+	Sleep(500);
+	printf("快点！！！！！！！\n");
+	while (1)
+	{	
+		printf("请输入>\n");
+		scanf("%d%d", &x, &y);
+		if (x >= 1 && x <=j && y >= 1 && y <=k)
+		{
+			if (qipan[x - 1][y - 1] == ' ')
+			{
+				qipan[x - 1][y - 1] = '*';
+				break;
+			}
+			else
+			{
+				printf("这里已经满员了\n");
+			}
+		}
+		else
+		{
+			printf("这里可没有座位\n");
+		}
+	}
+}
+void computerplay(char qipan[hang][lie], int o, int p)
+{
+	int x = 0;
+	int y = 0;
+	while (1)
+	{
+		printf("人工智障正在运行\n");
+		Sleep(1000);
+		printf("请不要着急\n");
+		Sleep(1000);
+		x = rand() % hang;
+		y = rand() % lie;
+		if (qipan[x][y] == ' ')
+		{
+			qipan[x][y] = '#';
+			break;
+		}
+	}
+}
+int pingju(char qipan[hang][lie], int e, int f)
+{
+	int x = 0;
+	for (x = 0; x < e; x++)
+	{
+		int y = 0;
+		for (y = 0; y < f; y++)
+		{
+			if (qipan[x][y] == ' ')
+			{
+				return 0;
+			}
+		}
+	}
+	return 1;
+}
+char whowin(char qipan[hang][lie],int q,int w)
+{
+	int x = 0;
+	for (x = 0; x < q; x++)
+	{
+		if (qipan[0][x] == qipan[1][x] && qipan[1][x] == qipan[2][x] && qipan[1][x] != ' ')
+		{
+			return qipan[1][x];
+		}
+
+	}
+	for (x = 0; x < w; x++)
+	{
+		 if (qipan[x][0] == qipan[x][1] && qipan[x][1] == qipan[x][2] && qipan[x][1] != ' ')
+		{
+			return qipan[x][1];
+		}
+	}
+	if (qipan[0][0] == qipan[1][1] && qipan[1][1] == qipan[2][2] && qipan[1][1] != ' ')
+	{
+		return qipan[1][1];
+	}
+    if (qipan[0][2] == qipan[1][1] && qipan[1][1] == qipan[2][0] && qipan[1][1] != ' ')
+	{
+		return qipan[1][1];
+	}
+	if (1 == pingju(qipan, hang, lie))
+	{
+		return 'R';
+	}
+	else
+		return 'C';
+}
+
