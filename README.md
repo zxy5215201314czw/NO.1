@@ -1917,3 +1917,82 @@ void computerplay(char qipan[hang][lie], int o, int p);
 char whowin(char qipan[hang][lie], int q, int w);
 int pingju(char qipan[hang][lie], int e,int f);
 	
+#define   _CRT_SECURE_NO_WARNINGS  1
+#include"love.h" //引入所设置的函数和数据
+void test()
+{
+	printf("********************\n");
+	printf("***   来玩游戏   ***\n");
+	printf("*** 1.play 0.不玩***\n");
+	printf("********************\n");
+}
+void game()
+{
+	char edg = 0;
+	char qipan[hang][lie] = { 0 };//设置棋盘
+	chushihuaqipan(qipan, hang, lie);//将棋盘的每个元素都初始化
+	dayinqipan(qipan,hang,lie);//将棋盘打印在电脑上
+	while (1)
+	{
+		playjingziqi(qipan, hang, lie);//玩家下棋
+		dayinqipan(qipan, hang, lie);//再次打印以展示棋盘
+		edg = whowin(qipan,hang,lie);
+		if (edg != 'C')
+		{
+			break;
+		}
+		computerplay(qipan, hang, lie);//电脑下棋
+		dayinqipan(qipan, hang, lie);//再次打印以展示棋盘
+		edg = whowin(qipan, hang, lie);
+		if (edg != 'C')
+		{
+			break;
+		}
+	}
+	if (edg == '*')
+	{
+		printf("这是你的胜利\n");
+	}
+	else if (edg == '#')
+	{
+		printf("有点可惜哦\n");
+	}
+	else if (edg == 'R')
+	{
+		printf("平局了\n");
+		Sleep(1000);
+		printf("不公平！不公平！重赛！重赛！\n");
+		printf("老子摆的就是烂！\n");
+		Sleep(2000);
+		printf("所以你不会放弃的对吗\n");
+	}
+}
+void jingziqi()
+{	
+	srand((unsigned int)time(NULL));
+	int a = 0;
+	do
+	{	
+	  	test();
+		printf("请选择：");
+        scanf("%d", &a);
+		switch (a)
+		{
+		case 1:
+			game();
+			break;
+		case 0:
+			printf("不玩就不玩\n");
+			break;
+		default:
+			printf("？？？？？？？？\n");
+			break;
+		}
+	}while (a);
+}
+int main()
+{
+	jingziqi();
+	return 0;
+}
+	
