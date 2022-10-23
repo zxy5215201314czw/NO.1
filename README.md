@@ -1901,3 +1901,19 @@ int main()
 	jingziqi();
 	return 0;
 }
+
+	#pragma once
+#include<stdio.h>
+#include<stdlib.h>
+#include<windows.h>
+#include<time.h>
+#include<string.h>
+#define hang 3
+#define lie 3
+void dayinqipan(char qipan[hang][lie], int n, int m);
+void chushihuaqipan(char qipan[hang][lie], int a, int b);
+void playjingziqi(char qipan[hang][lie], int j, int k);
+void computerplay(char qipan[hang][lie], int o, int p);
+char whowin(char qipan[hang][lie], int q, int w);
+int pingju(char qipan[hang][lie], int e,int f);
+	
