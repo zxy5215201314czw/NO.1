@@ -2637,3 +2637,107 @@ int main()
     kaishi();
     return 0;
 }					
+
+					#define   _CRT_SECURE_NO_WARNINGS  1
+#include"love.h"
+
+
+
+void chushihua2(char qipan2[ROWS][COLS], int rows, int cols, char ret)
+{
+	int a = 0;
+	int b = 0;
+	for (a = 0; a < rows; a++)
+	{
+		for (b = 0; b < cols; b++)
+		{
+			qipan2[a][b] = ret;
+		}
+	}
+}
+
+void dayinqipan2(char qipan2[ROWS][COLS], int row, int col)
+{
+	int a = 0;
+	int b = 0;
+	for (a = 0; a <= col; a++)
+	{
+		printf("%d ", a);
+	}
+	printf("\n");
+	for (a = 1; a <= row; a++)
+	{
+		printf("%d ", a);
+		for (b = 1; b <= col; b++)
+		{
+			printf("%c ", qipan2[a][b]);
+
+		}
+		printf("\n");
+	}
+}
+
+void buzhidilei(char qipan2[ROWS][COLS], int row, int col)
+{
+	int arr = EASY;
+	int a = 0;
+	while (arr)
+	{
+		int x = rand() % 9+1;
+		int y = rand() % 9+1;
+		if (qipan2[x][y] == '0')
+		{
+			qipan2[x][y] = '1';
+			arr--;
+		}
+	}
+}
+
+int zhouweidedilei(char houtai[ROWS][COLS], int x, int y)
+{
+	return houtai[x + 1][y + 1] +
+		houtai[x - 1][y - 1] +
+		houtai[x + 1][y] +
+		houtai[x][y + 1] +
+		houtai[x][y - 1] +
+		houtai[x - 1][y + 1] +
+		houtai[x + 1][y - 1] +
+		houtai[x - 1][y] - 8*'0';
+}
+
+void kaishisaolei(char houtai[ROWS][COLS], char qiantai[ROWS][COLS], int row, int col)
+{
+	int x = 0;
+	int y = 0;
+	int win = 0;
+	while (win < row * col - EASY)
+	{
+		printf("请输入你选择的位置的坐标\n");
+		scanf("%d%d", &x, &y);
+		if (x >= 1 && x <= row && y >= 1 && y <= col)
+		{
+			if (houtai[x][y] == '1')
+			{
+				printf("恭喜你，你被炸死了\n");
+				dayinqipan2(houtai, ROW, COL);
+				break;
+			}
+			else
+			{
+				int a = zhouweidedilei(houtai, x, y);
+				qiantai[x][y] = a + '0';
+				dayinqipan2(qiantai, ROW, COL);
+				win++;
+			}
+		}
+		else
+		{
+			printf("你要不要看看你在输什么东西\n");
+		}
+	}
+	if (win == row * col - EASY)
+	{
+		printf("你找到了所有的地雷\n");
+		printf("你赢了\n");	
+	}
+}
