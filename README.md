@@ -2593,4 +2593,47 @@ void kaishisaolei(char houtai[ROWS][COLS], char qiantai[ROWS][COLS], int row, in
 int zhouweidedilei(char houtai[ROWS][COLS], int x, int y);
 					
 					
-					
+#define   _CRT_SECURE_NO_WARNINGS  1
+#include"love.h"
+                  
+void saolei()
+{
+    char houtai[ROWS][COLS] = { 0 };
+    char qiantai[ROWS][COLS] = { 0 };//棋盘的布置
+    printf("扫雷\n");
+    chushihua2(houtai, ROWS, COLS,'0');
+    chushihua2(qiantai, ROWS, COLS,'*');//棋盘的初始化设计
+    dayinqipan2(houtai, ROW, COL );
+    dayinqipan2(qiantai, ROW, COL);//打印棋盘
+    buzhidilei(houtai, ROW, COL);//在后台棋盘中布置地雷
+    dayinqipan2(houtai, ROW, COL);//展示有地雷的棋盘
+    kaishisaolei(houtai, qiantai, ROW, COL);
+}
+
+void kaishi()
+{
+    int a = 0;
+    srand((unsigned int)time(NULL));
+    do
+    {
+       printf("玩不玩\n");
+       printf("1.play  0.not\n");
+       scanf("%d",&a);
+       switch (a)
+       {
+       case 1:
+           saolei();
+           break;
+       case 0:
+           printf("不玩就不玩\n");
+           break;
+       default:
+           printf("???????????\n");
+       }
+    } while (a);
+}
+int main()
+{
+    kaishi();
+    return 0;
+}					
