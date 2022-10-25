@@ -3357,3 +3357,18 @@ int main()
     printf("%d", c);
     return 0;
 }
+
+					int main()
+{
+    int a = 0;
+    int b = 0;
+    int c = 0;
+    scanf("%d", &a);
+    while (a)
+    {
+        c++;
+        a = a & (a - 1);//           0111   0110  0101 0100 0011
+    }
+    printf("%d", c);
+    return 0;
+}
