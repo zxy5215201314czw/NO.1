@@ -2741,3 +2741,33 @@ void kaishisaolei(char houtai[ROWS][COLS], char qiantai[ROWS][COLS], int row, in
 		printf("你赢了\n");	
 	}
 }
+
+#pragma once
+#include<string.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include<windows.h>
+#include<math.h>
+#include<time.h>
+#define ROW 9
+#define COL 9
+#define ROWS 11
+#define COLS 11
+#define EASY 40
+
+#define hang 3
+#define lie 3
+void dayinqipan(char qipan[hang][lie], int n, int m);
+void chushihuaqipan(char qipan[hang][lie], int a, int b);
+void playjingziqi(char qipan[hang][lie], int j, int k);
+void computerplay(char qipan[hang][lie], int o, int p);
+char whowin(char qipan[hang][lie], int q, int w);
+int pingju(char qipan[hang][lie], int e, int f);
+void hs1();
+void hs2();
+void chushihua2(char qipan2[ROWS][COLS], int rows, int cols, char ret);
+void dayinqipan2(char qipan2[ROWS][COLS], int row, int col);
+void buzhidilei(char qipan2[ROWS][COLS], int row, int col);
+void kaishisaolei(char houtai[ROWS][COLS], char qiantai[ROWS][COLS], int row, int col);
+int zhouweidedilei(char houtai[ROWS][COLS], int x, int y);
+
