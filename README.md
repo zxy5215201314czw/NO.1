@@ -2771,3 +2771,277 @@ void buzhidilei(char qipan2[ROWS][COLS], int row, int col);
 void kaishisaolei(char houtai[ROWS][COLS], char qiantai[ROWS][COLS], int row, int col);
 int zhouweidedilei(char houtai[ROWS][COLS], int x, int y);
 
+#define   _CRT_SECURE_NO_WARNINGS  1
+#include"love.h"
+
+
+
+void chushihua2(char qipan2[ROWS][COLS], int rows, int cols, char ret)
+{
+	int a = 0;
+	int b = 0;
+	for (a = 0; a < rows; a++)
+	{
+		for (b = 0; b < cols; b++)
+		{
+			qipan2[a][b] = ret;
+		}
+	}
+}
+
+void dayinqipan2(char qipan2[ROWS][COLS], int row, int col)
+{
+	int a = 0;
+	int b = 0;
+	for (a = 0; a <= col; a++)
+	{
+		printf("%d ", a);
+	}
+	printf("\n");
+	for (a = 1; a <= row; a++)
+	{
+		printf("%d ", a);
+		for (b = 1; b <= col; b++)
+		{
+			printf("%c ", qipan2[a][b]);
+
+		}
+		printf("\n");
+	}
+}
+
+void buzhidilei(char qipan2[ROWS][COLS], int row, int col)
+{
+	int arr = EASY;
+	int a = 0;
+	while (arr)
+	{
+		int x = rand() % 9+1;
+		int y = rand() % 9+1;
+		if (qipan2[x][y] == '0')
+		{
+			qipan2[x][y] = '1';
+			arr--;
+		}
+	}
+}
+
+int zhouweidedilei(char houtai[ROWS][COLS], int x, int y)
+{
+	return houtai[x + 1][y + 1] +
+		houtai[x - 1][y - 1] +
+		houtai[x + 1][y] +
+		houtai[x][y + 1] +
+		houtai[x][y - 1] +
+		houtai[x - 1][y + 1] +
+		houtai[x + 1][y - 1] +
+		houtai[x - 1][y] - 8*'0';
+}
+
+void kaishisaolei(char houtai[ROWS][COLS], char qiantai[ROWS][COLS], int row, int col)
+{
+	int x = 0;
+	int y = 0;
+	int win = 0;
+	while (win < row * col - EASY)
+	{
+		printf("请输入你选择的位置的坐标\n");
+		scanf("%d%d", &x, &y);
+		if (x >= 1 && x <= row && y >= 1 && y <= col)
+		{
+			if (houtai[x][y] == '1')
+			{
+				printf("恭喜你，你被炸死了\n");
+				dayinqipan2(houtai, ROW, COL);
+				break;
+			}
+			else
+			{
+				int a = zhouweidedilei(houtai, x, y);
+				qiantai[x][y] = a + '0';
+				dayinqipan2(qiantai, ROW, COL);
+				win++;
+			}
+		}
+		else
+		{
+			printf("你要不要看看你在输什么东西\n");
+		}
+	}
+	if (win == row * col - EASY)
+	{
+		printf("你找到了所有的地雷\n");
+		printf("你赢了\n");	
+	}
+}
+
+void chushihuaqipan(char qipan[hang][lie], int a, int b)
+{
+	int x = 0;
+	int y = 0;
+	for (x = 0; x < a; x++)
+	{
+		for (y = 0; y < b; y++)
+		{
+			qipan[x][y] = ' ';
+		}
+	}
+}
+void dayinqipan(char qipan[hang][lie], int a, int b)
+{
+	int n = 0;
+	for (n = 0; n < a; n++)
+	{
+		int m = 0;
+		for (m = 0; m < b; m++)
+		{
+			printf(" %c ", qipan[n][m]);
+			if (m < b - 1)
+				printf("|");
+		}
+		printf("\n");
+		if (n < a - 1)
+		{
+			for (m = 0; m < b; m++)
+			{
+				printf("---");
+				if (m < b - 1)
+					printf("|");
+			}
+			printf("\n");
+		}
+	}
+
+}
+void playjingziqi(char qipan[hang][lie], int j, int k)
+{
+	int x = 0;
+	int y = 0;
+	printf("请输入坐标\n");
+	Sleep(500);
+	printf("快点！！！！！！！\n");
+	while (1)
+	{
+		printf("请输入>\n");
+		scanf("%d%d", &x, &y);
+		if (x >= 1 && x <= j && y >= 1 && y <= k)
+		{
+			if (qipan[x - 1][y - 1] == ' ')
+			{
+				qipan[x - 1][y - 1] = '*';
+				break;
+			}
+			else
+			{
+				printf("这里已经满员了\n");
+			}
+		}
+		else
+		{
+			printf("这里可没有座位\n");
+		}
+	}
+}
+void computerplay(char qipan[hang][lie], int o, int p)
+{
+	int x = 0;
+	int y = 0;
+	while (1)
+	{
+		printf("人工智障正在运行\n");
+		Sleep(1000);
+		printf("请不要着急\n");
+		Sleep(1000);
+		x = rand() % hang;
+		y = rand() % lie;
+		if (qipan[x][y] == ' ')
+		{
+			qipan[x][y] = '#';
+			break;
+		}
+	}
+}
+int pingju(char qipan[hang][lie], int e, int f)
+{
+	int x = 0;
+	for (x = 0; x < e; x++)
+	{
+		int y = 0;
+		for (y = 0; y < f; y++)
+		{
+			if (qipan[x][y] == ' ')
+			{
+				return 0;
+			}
+		}
+	}
+	return 1;
+}
+char whowin(char qipan[hang][lie], int q, int w)
+{
+	int x = 0;
+	for (x = 0; x < q; x++)
+	{
+		if (qipan[0][x] == qipan[1][x] && qipan[1][x] == qipan[2][x] && qipan[1][x] != ' ')
+		{
+			return qipan[1][x];
+		}
+
+	}
+	for (x = 0; x < w; x++)
+	{
+		if (qipan[x][0] == qipan[x][1] && qipan[x][1] == qipan[x][2] && qipan[x][1] != ' ')
+		{
+			return qipan[x][1];
+		}
+	}
+	if (qipan[0][0] == qipan[1][1] && qipan[1][1] == qipan[2][2] && qipan[1][1] != ' ')
+	{
+		return qipan[1][1];
+	}
+	if (qipan[0][2] == qipan[1][1] && qipan[1][1] == qipan[2][0] && qipan[1][1] != ' ')
+	{
+		return qipan[1][1];
+	}
+	if (1 == pingju(qipan, hang, lie))
+	{
+		return 'R';
+	}
+	else
+		return 'C';
+}
+void hs1()
+{
+	printf("********************\n");
+	printf("*** 请猜一个数字 ***\n");
+	printf("*** 1.play 0.不玩***\n");
+	printf("********************\n");
+}
+void hs2()
+{
+	int d = 0;
+	int c = 0;
+	d = rand() % 100 + 1;
+	while (1)
+	{
+		printf("请输入你的答案：\n");
+		scanf("%d", &c);
+		if (c < d)
+		{
+			printf("小了\n");
+
+		}
+		else if (c > d)
+		{
+			printf("大了\n");
+
+		}
+		else
+		{
+			printf("厉害\n");
+			break;
+		}
+	}
+}
+					
+					
