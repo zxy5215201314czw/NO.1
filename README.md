@@ -3339,3 +3339,21 @@ int main()
 	}
 	return 0;
 }
+
+					
+int main()
+{
+    int a = 0;
+    int b = 0;
+    int c = 0;
+    scanf("%d", &a);
+    for (b = 0; b < 32; b++)
+    {
+        if ((a >> b) & 1 == 1)
+        {
+            c++;
+        }
+    }
+    printf("%d", c);
+    return 0;
+}
