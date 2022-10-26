@@ -3445,3 +3445,47 @@ int main()
 	printf("%d\n", a);
 	return 0;
 }
+
+int main()
+{
+	char xue[30][30] = {0};
+	int b = 0;
+	int a = 0;
+	int x = 0;
+	int y = 0;
+	int input = 900;
+	int w = 0;
+	char ret = '*';
+	srand((unsigned int)time(NULL));		
+		for (b = 0; b < 10; b++)
+		{
+			int i = rand() % 9 + 1;
+			int j = rand() % 9 + 1;
+			if (xue[i][j] != ret)
+			{
+				xue[i][j] = ret;
+			}
+		}
+		//for (x = 0; x < 30; x++)
+		//{
+		//	int y = 0;
+		//	for (y = 0; y < 30; y++) 
+		//	{
+		//	if (xue[x][y] != '*')
+		//	{
+		//		xue[x][y] = ' ';
+		//	}
+		//    }
+		//}
+		for (w = 0; w < 20; w++)
+		{
+			int e = 0;
+			for (e = 0; e < 20; e++)
+			{ 
+				printf("%c ", xue[w][e]);
+			}
+			printf("\n");
+		}
+	return 0;
+
+}
