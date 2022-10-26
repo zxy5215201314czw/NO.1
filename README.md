@@ -3411,3 +3411,22 @@ int main()
 	printf("%s\n", laopu.xuehao);
 	return 0;
 }
+
+//整型提升的实例
+int main()
+{
+	char d = 1;
+	printf("%u\n", sizeof(d));
+	printf("%u\n", sizeof(+d));
+	printf("%u\n", sizeof(!d));
+	char a = 0xb6;
+	short b = 0xb600;
+	int c = 0xb6000000;
+	if (a == 0xb6)
+		printf("a");
+	if (b == 0xb600)
+		printf("b");
+	if (c == 0xb6000000)
+		printf("c");
+	return 0;
+}
