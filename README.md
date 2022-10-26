@@ -3430,3 +3430,18 @@ int main()
 		printf("c");
 	return 0;
 }
+
+//这是一个错误的代码，不同的编译器得出的结果不同，我的是14
+int few()
+{
+	static int cout = 1;
+	return ++cout;
+}
+
+int main()
+{
+	int a = 0;
+	a = few() + few() * few();
+	printf("%d\n", a);
+	return 0;
+}
