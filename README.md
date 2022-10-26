@@ -3372,3 +3372,23 @@ int main()
     printf("%d", c);
     return 0;
 }
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	short s = 0;
+	int a = 10;
+	printf("%d\n", sizeof(s = a + 5));
+	printf("%d\n",s);
+	int b = 11;   //1011 1111  0001
+	b = b | (1 << 2);
+	printf("%d\n", b);//1111  1011  0100
+	b = b ^ (1 << 2);
+	printf("%d\n", b);
+	b = 15;//1111  1011  1011 0100
+	b = b & (~(1 << 2));
+	printf("%d\n", b);
+	printf("%d\n", sizeof(char));
+	return 0;
+}
