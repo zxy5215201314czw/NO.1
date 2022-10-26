@@ -3392,3 +3392,21 @@ int main()
 	printf("%d\n", sizeof(char));
 	return 0;
 }
+
+struct xinxi
+{
+	char name[50];
+	int nianling;
+	char xuehao[50];
+};
+
+int main()
+{
+	struct xinxi laopu = {"斯卡蒂", 25, "52052011314"};
+	struct xinxi* laopo = &laopu;
+	printf("%s\n", ( * laopo).name );
+	printf("%s\n", laopu.name);
+	printf("%d\n", laopu.nianling);
+	printf("%s\n", laopu.xuehao);
+	return 0;
+}
