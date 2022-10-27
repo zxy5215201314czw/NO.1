@@ -3489,3 +3489,16 @@ int main()
 	return 0;
 
 }
+
+#include<stdio.h>
+#define kg  0.4535924
+int main()
+{
+	float a = 0;
+	printf("输入以镑为单位的数\n");
+	scanf("%f", &a);
+	double b = a * kg;
+	printf("%.2f\n", b);
+	return 0;
+}
+
