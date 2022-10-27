@@ -1640,7 +1640,7 @@ int loce(int n)
 	{
 		c = a + b;
 		a = b;
-		c = b;
+		b = c;
 		n--;
 	}
 	return c;
