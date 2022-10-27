@@ -3502,3 +3502,16 @@ int main()
 	return 0;
 }
 
+int main()
+{
+	int i = 0;
+	int arr[10] = { 0 };
+	int* dizhi = arr;
+	for (i = 0; i < 10; i++)
+	{
+		*(dizhi + i) = 1;
+
+	}
+	return 0;
+}
+
