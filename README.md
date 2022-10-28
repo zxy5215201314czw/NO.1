@@ -3550,13 +3550,16 @@ void chushihua(char shijie[20][30])
 void xiaxue(char world[20][30])
 {
 	int A = 0;
-	for (A = 0; A <= 30; A++)
+	for (A = 0; A <= 8; A++)
 	{
 		int i = rand() % 15 + 1;
 		int j = rand() % 30 + 1;
-		if (world[i][j] != '*')
+		if (i < 15 && j < 30)
 		{
-			world[i][j] = '*';
+			if (world[i][j] != '*')
+			{
+				world[i][j] = '*';
+			}
 		}
 	}
 }
@@ -3564,7 +3567,7 @@ void xiaxue(char world[20][30])
 void kanjianxue(char woziji[20][30])
 {
 	int i = 0;
-	for (i = 0; i < 20; i++)
+	for (i = 0; i < 15; i++)
 	{
 		int j = 0;
 		for (j = 0; j < 30; j++)
@@ -3575,16 +3578,38 @@ void kanjianxue(char woziji[20][30])
 	}
 }
 
+void menqianxiaolu(char xiaolu[20][30])
+{
+	int i = 0;
+	int j = 0;
+	for (i = 17; i >= 15; i--)
+	{
+		for (j = 0; j < 30; j++)
+		{
+			xiaolu[i][j] = '*';
+		}
+	}
+	for (i = 17; i >=15 ; i--)
+	{
+		for (j = 0; j < 30; j++)
+		{
+			printf("* %c ", xiaolu[i][j]);
+		}
+		printf("\n");
+	}
+}
+
 int main()
 {
 	char xue[20][30] = { 0 };
-	int a = 80;
+	int a = 15;
 	srand((unsigned int)time(NULL));
 	chushihua(xue);
 	while (a) 
 	{
 		xiaxue(xue);
 		kanjianxue(xue);
+		menqianxiaolu(xue);
 		Sleep(500);
 		system("cls");
 		a--;
