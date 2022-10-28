@@ -3533,3 +3533,61 @@ int main()
 	printf("%d\n", geshu);
 	return 0;
 }
+
+void chushihua(char shijie[20][30])
+{
+	int i = 0;
+	for (i = 0; i < 20; i++)
+	{
+        int j = 0;
+		for (j = 0; j < 30; j++)
+		{
+			shijie[i][j] = ' ';
+		}
+	}
+}
+
+void xiaxue(char world[20][30])
+{
+	int A = 0;
+	for (A = 0; A <= 30; A++)
+	{
+		int i = rand() % 15 + 1;
+		int j = rand() % 30 + 1;
+		if (world[i][j] != '*')
+		{
+			world[i][j] = '*';
+		}
+	}
+}
+
+void kanjianxue(char woziji[20][30])
+{
+	int i = 0;
+	for (i = 0; i < 20; i++)
+	{
+		int j = 0;
+		for (j = 0; j < 30; j++)
+		{
+			printf("%c   ", woziji[i][j]);
+		}
+		printf("\n");
+	}
+}
+
+int main()
+{
+	char xue[20][30] = { 0 };
+	int a = 80;
+	srand((unsigned int)time(NULL));
+	chushihua(xue);
+	while (a) 
+	{
+		xiaxue(xue);
+		kanjianxue(xue);
+		Sleep(500);
+		system("cls");
+		a--;
+	}
+	return 0;
+}
