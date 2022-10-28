@@ -3515,3 +3515,21 @@ int main()
 	return 0;
 }
 
+int love(char* rut)
+{
+	char* b = rut;
+	char* c = rut;
+	while (*c != '\0')
+	{
+		c++;
+	}
+	return c - b;
+}
+
+int main()
+{ 
+	char ret[20] = "123";
+	int geshu = love(ret);
+	printf("%d\n", geshu);
+	return 0;
+}
