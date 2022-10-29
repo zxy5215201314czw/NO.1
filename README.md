@@ -3616,3 +3616,52 @@ int main()
 	}
 	return 0;
 }
+
+void chushihua(int shiyan[10], int a)
+{
+	int i = 0;
+	for (i = 0; i < a; i++)
+	{
+		shiyan[i] = 0;
+	}
+}
+
+void dayin(int shiyan[10], int a)
+{
+	int i = 0;
+	for (i = 0; i < a; i++)
+	{
+		printf(" %d", shiyan[i]);
+	}
+	printf("\n");
+}
+
+void daozhidayin(int shiyan[10], int a)
+{
+	int zuo = 0;
+	int you = a - 1;	
+	int i = 0;
+	while (zuo < you)
+	{
+		int A = shiyan[zuo];
+		shiyan[zuo] = shiyan[you];
+		shiyan[you] = A;
+		zuo++;
+		you--;
+	}
+	for (i = 0; i < a; i++)
+	{
+		printf(" %d", shiyan[i]);
+	}
+	printf("\n");
+}
+
+int main()
+{
+	int shiyan[10] = { 1,2,3,4,5,6,7,8,9,10 };
+	int sz = sizeof(shiyan) / sizeof(shiyan[0]);
+	//chushihua(shiyan, sz);
+	dayin(shiyan, sz);
+	daozhidayin(shiyan, sz);
+	return 0;
+}
