@@ -3686,3 +3686,19 @@ int main()
 	}
 	return 0;
 }
+
+			  int main()
+{
+	int arr[] = { 1,2,3,4,5,6,7 };
+	short* p = (short*)arr;
+	int i = 0;
+	for (i = 0; i < 4; i++)
+	{
+		*(p+i) = 0;	
+	}
+	for (i = 0; i < 7; i++)
+	{
+		printf("%d ", arr[i]);
+	}
+	return 0;
+}
