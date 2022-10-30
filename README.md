@@ -3783,3 +3783,21 @@ void chengfabiao(int a)
 		printf("\n");
 	}
 }
+
+					int shushu3(char* aqq)
+{
+	if (*aqq != '\0')
+		return 1 + shushu3(aqq + 1);
+	else
+		return 0;
+}
+void daoxu(char* aqq)
+{
+	int ret = aqq[0];
+	int a = shushu3(aqq);
+	aqq[0] = aqq[a - 1];
+	aqq[a - 1] = '\0';
+	if (shushu3(aqq + 1))
+		daoxu(aqq + 1);
+	aqq[a - 1] = ret;
+}
