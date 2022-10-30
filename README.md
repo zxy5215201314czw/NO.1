@@ -3801,3 +3801,13 @@ void daoxu(char* aqq)
 		daoxu(aqq + 1);
 	aqq[a - 1] = ret;
 }
+
+					double chengfang(int n, int k)
+{
+	if (k < 0)
+		return (1.0 / ( chengfang(n, -k)));
+	else if (k == 0)
+		return 1;
+	else
+		return n * chengfang(n, k - 1);
+}
