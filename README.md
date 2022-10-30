@@ -3702,3 +3702,61 @@ int main()
 	}
 	return 0;
 }
+
+int shushu(int a)
+{
+	int ret = 0;
+	while (a)
+	{
+		a = a & (a - 1);   
+		ret++;                 	                   
+	}   
+	return ret;
+}
+
+int shushu2(int a, int b)
+{
+	int j = a ^ b;
+	return j;
+}
+
+void huoqu( int a)
+{
+	int i = 0;
+	for (i = 0; i < 32; i++)
+	{
+		if (((a >> i) & 1 )== 1)
+		{	
+			printf("1");
+		}
+		else
+		{
+			printf("0");
+		}
+	}
+}
+ //  000000000000000000000001
+void huoqu2(int m)
+{
+	int i = 0;
+	for (i = 30; i >= 0; i -= 2)
+	{
+		printf("%d ", (m >> i) & 1);
+	}
+	printf("奇数位");
+	printf("\n");
+	for (i = 31; i >= 1; i -= 2)
+	{
+		printf("%d ", (m >> i) & 1);
+	}
+	printf("偶数位");
+	printf("\n");
+}
+
+int main()//获取一个二进制的奇数位和偶数位
+{
+	int m = 0;
+	scanf("%d", &m);
+	huoqu2(m);
+	return 0;                   
+} 
