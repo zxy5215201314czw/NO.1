@@ -3760,3 +3760,11 @@ int main()//获取一个二进制的奇数位和偶数位
 	huoqu2(m);
 	return 0;                   
 } 
+
+					void jiaohuan(int m, int n)
+{
+	int c = m ^ n;
+	int a = c ^ m;
+	int b = c ^ n;
+    printf("m=%d n=%d ", a, b);
+}
