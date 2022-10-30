@@ -3768,3 +3768,18 @@ int main()//获取一个二进制的奇数位和偶数位
 	int b = c ^ n;
     printf("m=%d n=%d ", a, b);
 }
+
+void chengfabiao(int a)
+{
+	int i = 0;
+	for (i = 1; i <= a; i++)
+	{
+		int j = 0;
+		for (j = 1; j <= i; j++)
+		{
+			printf(" %d*%d=", i, j);
+			printf("%d ", i * j);
+		}
+		printf("\n");
+	}
+}
