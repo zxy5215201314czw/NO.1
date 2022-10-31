@@ -3811,3 +3811,31 @@ void daoxu(char* aqq)
 	else
 		return n * chengfang(n, k - 1);
 }
+
+typedef struct sikadi
+{
+    int shengao;
+    char name[20];
+    char* app;
+}sikadi;
+typedef struct laopo
+{
+    char name[20];
+    int nianling;
+    int dianhua;
+    sikadi s;
+}laopo;
+
+
+int main()
+{
+    char arr[20] = "hehe";
+    laopo a = { "didi",27,10,{10,"didi",arr}};
+    printf("%s\n", a.name);
+    printf("%d\n", a.nianling);
+    printf("%d\n", a.dianhua);
+    printf("%d\n", a.s.shengao);
+    printf("%s\n", a.s.name);
+    printf("%s\n", a.s.app);
+    return 0;
+}
