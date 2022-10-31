@@ -3850,3 +3850,31 @@ void print(laopo* a)
     printf("%d\n", a->s.shengao);
 
 }
+
+int main()
+{
+    int A[] = { 29,6,28,20,2,24 };
+    int i = 0;
+    int e = 0;
+    int j = 0;
+    for (i = 1; i <= 3; i++)
+    {
+        e = A[i]; j = i;
+        while (j > 0)
+        {
+            if (A[j - 1] > e)
+                A[j] = A[j - 1];
+            else
+                break;
+            j--;
+        }
+        A[j]=e;
+    }
+    printf("%d\n", A[0]);
+    printf("%d\n", A[1]);
+    printf("%d\n", A[2]);
+    printf("%d\n", A[3]);
+    printf("%d\n", A[4]);
+    printf("%d\n", A[5]);
+    return 0;
+}
