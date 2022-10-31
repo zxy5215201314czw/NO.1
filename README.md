@@ -3839,3 +3839,14 @@ int main()
     printf("%s\n", a.s.app);
     return 0;
 }
+
+void print(laopo* a)
+{
+    printf("%s\n", a->name);
+    printf("%d\n", a->nianling );
+    printf("%d\n", a->dianhua);
+    printf("%s\n", a->s.name);
+    printf("%s\n", a->s.app);
+    printf("%d\n", a->s.shengao);
+
+}
