@@ -3878,3 +3878,55 @@ int main()
     printf("%d\n", A[5]);
     return 0;
 }
+
+
+#define hang 50
+#define lie 50
+
+void chushihua(char arr[hang][lie])
+{
+	int a = 0;
+	for (a = 0; a < hang; a++)
+	{
+		int b = 0;
+		for (b = 0; b < lie; b++)
+		{
+			arr[a][b] = ' ';
+		}
+	}
+}
+
+void xiaoxue(char arr[hang][lie])
+{
+	int a = 0;
+	for (a = 0; a < 500; a++)
+	{
+		int i = rand() % 30;
+		int j = rand() % lie + 1;
+		if (i < hang && j < lie)
+			arr[i][j] = '*';
+	}
+}
+
+void dayinxue(char arr[hang][lie])
+{
+	int a = 0;
+	for (a = 0; a < 40; a++)
+	{
+		int b = 0;
+		for (b = 0; b < lie; b++)
+		{
+			printf("%c ", arr[a][b]);
+		}
+	}
+}
+
+int main()
+{
+	char xue[hang][lie];
+	srand((unsigned int)time(NULL));
+	chushihua(xue);
+	xiaoxue(xue);
+	dayinxue(xue);
+	return 0;
+}
