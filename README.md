@@ -3951,3 +3951,38 @@ int main()
 	printf("%d\n", sum);
 	return 0;
 }
+
+				  int main()
+{
+	char xue[hang][lie] = { };
+	int a = 0;
+	int b = 10;
+	printf("你想选择什么\n");
+	printf("1.看雪 2.三子棋 3.扫雷 \n");
+	printf("4.猜数字\n");
+	scanf("%d", &a);
+	switch (a)
+	{
+	case 1:
+		//b=shijian();
+			srand((unsigned int)time(NULL));
+			chushihua(xue);
+			xiaoxue(xue);
+			while (b--)
+			{
+				dayinxue(xue);
+				Sleep(1000);
+				system("cls");
+			}
+		break;
+		case 2:
+			break;
+		case 3:
+				break;
+		case 4:
+			break;
+		default:
+			break;
+	}
+	return 0;
+}
