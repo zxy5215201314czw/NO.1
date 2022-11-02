@@ -3986,3 +3986,14 @@ int main()
 	}
 	return 0;
 }
+
+int main()
+{
+	char arr1[] = "***************";
+	char arr2[] = "world";
+	//mystacpy(arr1, arr2);
+	//mystacpy2(arr1, arr2);
+	hanshu3(arr1, arr2);
+	printf("%s", arr1);
+	return 0;
+}
