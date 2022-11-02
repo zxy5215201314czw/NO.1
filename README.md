@@ -4021,8 +4021,9 @@ int main()
 	*arr1 = *arr2;
 }
 
-				  void hanshu3(char* arr1, char* arr2)
+void hanshu3(char* arr1, char* arr2)
 {
+	assert(*arr1 != NULL && *arr2 != NULL);
 	while (*arr1++ = *arr2++)
 	{
 		;
