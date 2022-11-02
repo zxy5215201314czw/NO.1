@@ -4021,11 +4021,23 @@ int main()
 	*arr1 = *arr2;
 }
 
-void hanshu3(char* arr1, const char* arr2)
+char* hanshu3(char* arr1, const char* arr2)
 {
+	char* ret = arr1;
 	assert(*arr1 != NULL && *arr2 != NULL);
 	while (*arr1++ = *arr2++)
 	{
 		;
 	}
+	return ret;
+}
+
+int main()
+{
+	char arr1[] = "***************";
+	char arr2[] = "world";
+	//mystacpy(arr1, arr2);
+	//mystacpy2(arr1, arr2);
+	printf("%s",hanshu3(arr1, arr2));
+	return 0;
 }
