@@ -4020,3 +4020,11 @@ int main()
 	}
 	*arr1 = *arr2;
 }
+
+				  void hanshu3(char* arr1, char* arr2)
+{
+	while (*arr1++ = *arr2++)
+	{
+		;
+	}
+}
