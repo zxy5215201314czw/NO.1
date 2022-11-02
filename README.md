@@ -4009,3 +4009,14 @@ int main()
 	}
 	arr1[j] = '\0';
 }
+
+				  void mystacpy2(char* arr1, char* arr2)
+{
+	while (*arr2 != '\0')
+	{
+		*arr1 = *arr2;
+		arr1++;
+		arr2++;
+	}
+	*arr1 = *arr2;
+}
