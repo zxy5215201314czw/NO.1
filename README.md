@@ -3997,3 +3997,15 @@ int main()
 	printf("%s", arr1);
 	return 0;
 }
+
+				  void mystacpy(char arr1[], char arr2[])
+{
+	int i = 0;
+	int j = 0;
+	for (i = 0; arr2[i] != '\0'; i++)
+	{
+		arr1[j] = arr2[i];
+		j++;
+	}
+	arr1[j] = '\0';
+}
