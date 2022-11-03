@@ -4041,3 +4041,33 @@ int main()
 	printf("%s",hanshu3(arr1, arr2));
 	return 0;
 }
+
+void panduan(int arr[hang][lie],int c)
+{
+	int a = 0;
+	for (a = 0; a < hang; a++)
+	{
+		int b = 0;
+		for (b = 0; b < lie; b++)
+		{
+			if (arr[a][b] == 0)
+			{
+				arr[a + 1][b] = arr[a][b];
+
+			}
+		}
+		if (a > c)
+		{
+			break;
+		}
+	}
+}
+
+void huanhang(int a)
+{
+	while (a--)
+	{
+		printf("\n");
+
+	}
+}
