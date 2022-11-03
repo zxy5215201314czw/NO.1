@@ -4087,3 +4087,6 @@ void huanhang(int a)
 				d++;
 				huanhang(c);
 			}
+
+					void panduan(int arr[hang][lie],int c);
+void huanhang(int a)
