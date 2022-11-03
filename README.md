@@ -4071,3 +4071,19 @@ void huanhang(int a)
 
 	}
 }
+
+						    system("mode con cols=70 lines=25");
+			srand((unsigned int)time(NULL));
+			chushihua(xue);
+			
+			while (1)
+			{   xiaoxue(xue);
+				dayinxue(xue,b);
+				Sleep(500);
+				system("cls");
+				panduan(xue,d);
+				b++;
+				c++;
+				d++;
+				huanhang(c);
+			}
