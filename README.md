@@ -4088,5 +4088,23 @@ void huanhang(int a)
 				huanhang(c);
 			}
 
-					void panduan(int arr[hang][lie],int c);
+void panduan(int arr[hang][lie],int c);
 void huanhang(int a)
+
+
+int  panduan2()
+{
+	int a = 1;
+	return *(char*)&a;
+}
+
+int main()
+{
+	int a=panduan2();
+	int ret = 2;
+	if (a== 1)
+			printf("小端\n");
+	else
+		printf("大端\n");
+	return 0;
+}
