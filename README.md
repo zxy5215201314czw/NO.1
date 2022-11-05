@@ -4148,7 +4148,7 @@ int main()
 	return 0;
 }
 
-					int main()
+int main()
 {
 	float f = 5.5;
 	//0x40b00000
@@ -4158,6 +4158,16 @@ int main()
 	char* p = (char*) & a;
 	if (*p == 1)
 		printf("小端\n");
+	return 0;
+
+}
+
+int main()
+{
+	while (1)
+	{
+		printf("写不出的时候不硬写\n");
+	}
 	return 0;
 
 }
