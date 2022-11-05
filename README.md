@@ -4136,3 +4136,14 @@ int main()
 	printf("%u\n",a);
 
 }
+
+int main()
+{
+	unsigned int i = 0;
+	for (i = 9; i >= 0; i--)
+	{
+		printf("%u\n", i);
+		Sleep(500);
+	}//i被定义为一个无符号数，所以它永远为正不可能为负，导致这个代码进入死循环
+	return 0;
+}
