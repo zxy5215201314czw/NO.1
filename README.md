@@ -4171,3 +4171,32 @@ int main()
 	return 0;
 
 }
+
+int main()
+{
+	char arr[] = "abcdef";
+	char* pc = arr;
+	int a = 50;
+	int* p = &a;
+	int arr1[] = { 2,5,6,7,9,8,1 };
+	int* po = arr1;
+	const char* pa = "abcdef";
+	//*pa = 'W';0x000000C5FB35FB18 0x000000C5FB35FB38
+	const char arr3[] = "abc";
+	const char arr4[] = "abc";
+	const char *p1 = "abc";
+	const char *p2 = "abc";
+	printf("%s\n", pa);
+	printf("%p\n", arr1);
+	printf("%p\n", po);
+	printf("%d\n", *po);
+	printf("%d\n", a);
+	printf("%p\n", p);
+	printf("%d\n", *p);
+	printf("%s\n", arr);
+	printf("%s\n", pc);
+	printf("%c\n", *pc);
+	printf("%p\n", pc);
+	return 0;
+
+}
