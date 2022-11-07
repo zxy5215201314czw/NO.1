@@ -4308,3 +4308,47 @@ int main()
 	}
 	return 0;
 }
+
+; void chushihua(int arr[70][50], int a, int b)
+{
+	int i = 0;
+	for (i = 0; i < a; i++)
+	{
+		int j = 0;
+		for (j = 0; j < b; j++)
+		{
+			arr[i][j] = 1;
+		}
+	}
+}
+
+void xiaoxue(int arr[70][50], int a, int b)
+{
+	int i = 0;
+	for (i = 0; i < 50; i++)
+	{
+		int c = rand() % 10;
+		arr[0][i] = c;
+	}
+	int x = 0;
+	for (x = 0; x < 30; x++)
+	{
+		int y = 0;
+		for (y = 0; y < 50; y++)
+		{
+			if (arr[x][y] == 0)
+				printf("* ");
+			else
+				printf(" ");
+		}
+	}
+	int xx = 0;
+	for (xx = 69; xx > 0; xx--)
+	{
+		int yy = 0;
+		for (yy = 0; yy < 50; yy++)
+		{
+			arr[xx][yy] = arr[xx - 1][yy];
+		}
+	}
+}
