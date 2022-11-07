@@ -4233,3 +4233,41 @@ int main()
 	printf("%d\n", *p[0]);
 	return 0;
 }
+void print(int arr[5][6], int x, int y)
+{
+	int i = 0;
+	for (i = 0; i < x; i++)
+	{
+		int j = 0;
+		for (j = 0; j < y; j++)
+		{
+			printf("%d ", arr[i][j]);
+		}
+		printf("\n");
+	}
+
+}
+
+void print1(int(*p)[6], int x, int y)
+{
+	int i = 0;
+	for (i = 0; i < x; i++)
+	{
+		int j = 0;
+		for (j = 0; j < y; j++)
+		{
+			printf("%d ", *( * (p + i) + j));
+		}
+		printf("\n");
+	}
+}
+
+int main()
+{
+	int arr[5][6] = { {1,2,3,4,5,6}, {2,3,4,5,6,7}, {3,4,5,6,7,8,} };
+	print(arr, 5, 6);
+	print1(arr, 5, 6);
+	int(*p)[6] = arr;
+	printf("%d ", *(*p));
+	return 0;
+}
