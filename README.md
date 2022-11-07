@@ -4277,3 +4277,19 @@ int main()
 	printf("%d ", (p1)[0]);
 	return 0;
 }
+
+int main()
+{
+	int arr[5][6] = { {1,2,3,4,5,6}, {2,3,4,5,6,7}, {3,4,5,6,7,8,} };
+	int arr1[10] = { 1,2,3,4,5,6,7,8,9,10 };
+	print(arr, 5, 6);
+	print1(arr, 5, 6);
+	int(*p)[6] = arr;
+	int(*p1) = arr1;
+	printf("%d ", p[0][1]);
+	printf("%d ", *(p[0] + 1));
+	printf("%d ", *(*(p+1)+ 1));
+	printf("%d ", (*(p+1)[1]));
+	printf("%d ", (p1[0]+1));
+	return 0;
+}
