@@ -4352,3 +4352,6 @@ void xiaoxue(int arr[70][50], int a, int b)
 		}
 	}
 }
+
+void chushihua(int arr[70][50], int a, int b);
+void xiaoxue(int arr[70][50], int a, int b);
