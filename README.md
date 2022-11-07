@@ -4293,3 +4293,18 @@ int main()
 	printf("%d ", (p1[0]+1));
 	return 0;
 }
+
+; int main()
+{
+	Sleep(8000);
+	int arr[70][50] = { 0 };
+	chushihua(arr, 70, 50);
+	int a = 0;
+	for (a = 0; a < 100; a++)
+	{
+		xiaoxue(arr, 70, 50);
+		Sleep(500);
+		system("cls");
+	}
+	return 0;
+}
