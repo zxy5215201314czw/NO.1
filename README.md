@@ -4220,3 +4220,16 @@ int main()
 	}
 	return 0;
 }
+
+int main()
+{
+	int arr1[] = { 1,2,3,4,5,6 };
+	int arr2[] = { 2,3,4,5,6,7 };
+	int(*p)[6] = &arr1;
+	char* p1[5];
+	char*(*p2)[5] = &p1;	
+	//   char* 代表这个指针数组的类型  (*p2)代表这是个指针  [5]代表所指向的数组有五个元素  
+	printf("%p\n", p);
+	printf("%d\n", *p[0]);
+	return 0;
+}
