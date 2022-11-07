@@ -4271,3 +4271,9 @@ int main()
 	printf("%d ", *(*p));
 	return 0;
 }
+	int(*p)[6] = arr;
+	int(*p1) = arr1;
+	printf("%d ", (*p)[0]);
+	printf("%d ", (p1)[0]);
+	return 0;
+}
