@@ -4298,16 +4298,34 @@ int main()
 {
 	Sleep(8000);
 	int arr[70][50] = { 0 };
+	HideConsoleCursor();
 	chushihua(arr, 70, 50);
 	int a = 0;
+	int i = 69; 
+	int j = 0;
 	for (a = 0; a < 100; a++)
 	{
-		xiaoxue(arr, 70, 50);
-		Sleep(500);
-		system("cls");
+		if (a < 30)
+		{
+			xiaoxue(arr, 70, 50);
+			Sleep(500);
+			system("cls");
+		}
+		if (a >= 30)
+		{
+			if (a == 30)
+			{
+			   xiaoxue(arr, 70, 50);
+			}
+			dayin(arr, 70, 50);
+			Sleep(500);
+			system("cls");
+			dayin2(arr, 70, 50);
+		}
 	}
 	return 0;
 }
+
 
 ; void chushihua(int arr[70][50], int a, int b)
 {
