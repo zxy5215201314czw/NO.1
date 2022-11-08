@@ -4370,6 +4370,59 @@ void xiaoxue(int arr[70][50], int a, int b)
 		}
 	}
 }
+void HideConsoleCursor(void) 
+{
+	CONSOLE_CURSOR_INFO cursor_info = { 1, 0 };
+	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE),
+		&cursor_info);
+}
+void dayin(int arr[70][50], int a, int b)
+{
+	int i = 59;
+	int j = 0;
+	for (i = 29; i > 26; i--)
+	{
+		for (j = 0; j < 50; j++)
+		{
+			if (arr[i][j] != 0 && arr[i - 1][j] == 0)
+			{
+				arr[i][j] = arr[i - 1][j];
+				arr[i - 1][j] = 1;
+			}
+		}
+	}
+
+}
+void dayin2(int arr[70][50], int a, int b)
+{
+	int i = 0;
+	for (i = 0; i < 50; i++)
+	{
+		int c = rand() % 10;
+		arr[0][i] = c;
+	}
+	int x = 0;
+	for (x = 0; x < 30; x++)
+	{
+		int y = 0;
+		for (y = 0; y < 50; y++)
+		{
+			if (arr[x][y] == 0)
+				printf("* ");
+			else
+				printf(" ");
+		}
+	}
+	int xx = 0;
+	for (xx = 26; xx > 0; xx--)
+	{
+		int yy = 0;
+		for (yy = 0; yy < 50; yy++)
+		{
+			arr[xx][yy] = arr[xx - 1][yy];
+		}
+	}
+}
 
 void chushihua(int arr[70][50], int a, int b);
 void xiaoxue(int arr[70][50], int a, int b);
