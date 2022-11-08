@@ -4454,3 +4454,21 @@ int main()
 	hanshu16(arr2);
 	return 0;
 }	
+
+				     void hanshu1(int*arr)
+{}
+void hanshu2(int**arr)
+{}
+int main()
+{
+	int a = 10;
+	int* arr = &a;
+	int** p = &arr;
+	int* arr1[10];
+	hanshu1(arr);
+	hanshu1(&a);
+	hanshu2(p);
+	hanshu2(&arr);
+	hanshu2(arr1);
+	return 0;
+}	
