@@ -4428,3 +4428,29 @@ void xiaoxue(int arr[70][50], int a, int b);
 void HideConsoleCursor(void);
 void dayin(int arr[70][50], int a, int b);
 void dayin2(int arr[70][50], int a, int b);
+
+void hanshu1(int arr[])
+{}
+void hanshu2(int* arr)
+{}
+void hanshu3(int arr1[][5])
+{}
+void hanshu4(int (* arr1)[5])
+{}
+void hanshu5(int* arr[])
+{}
+void hanshu16(int **arr)
+{}
+int main()
+{
+	int arr[10];
+	int arr1[10][5];
+	int* arr2[50];
+	hanshu1(arr); 
+	hanshu2(arr);
+	hanshu3(arr1);
+	hanshu4(arr1);
+	hanshu5(arr2);
+	hanshu16(arr2);
+	return 0;
+}	
