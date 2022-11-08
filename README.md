@@ -4472,3 +4472,15 @@ int main()
 	hanshu2(arr1);
 	return 0;
 }	
+
+void hanshu1(const char* p)
+{
+	printf("%s\n", p);
+}
+int main()
+{
+	void (*p)(const char*) = hanshu1;
+	(*p)("hello,wolrd");
+	hanshu1("hello,world");
+	return 0;
+}	
