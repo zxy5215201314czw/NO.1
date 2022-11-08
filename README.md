@@ -4423,6 +4423,8 @@ void dayin2(int arr[70][50], int a, int b)
 		}
 	}
 }
-
 void chushihua(int arr[70][50], int a, int b);
 void xiaoxue(int arr[70][50], int a, int b);
+void HideConsoleCursor(void);
+void dayin(int arr[70][50], int a, int b);
+void dayin2(int arr[70][50], int a, int b);
