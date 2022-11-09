@@ -4484,3 +4484,13 @@ int main()
 	hanshu1("hello,world");
 	return 0;
 }	
+
+int main()
+{
+	(*(void (*) (int)) 0) (5); 
+	//意思是 把 0 强制类型传换成一个函数指针类型，此时的0就是一个函数的地址，然后再进行解引用操作去找到这个函数，之后再调用它
+	void (*signal(int, void (*) (int))) (int);
+	// 意思是 一个函数声明，这个名叫siganal的函数的参数类型呢是  int，函数指针；
+	//这个函数指针指向的函数参数类型是  int;返回值是一个 void类型。siganal函数的返回值也是一个函数指针
+	return 0;
+}
