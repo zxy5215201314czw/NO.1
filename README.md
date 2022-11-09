@@ -4509,3 +4509,37 @@ int main()
 	printf("%d\n", (*pa)(2, 3));
 	return 0;
 }
+
+char* my_strcpy(char* dest, const char* src)
+{
+	return 0;
+}
+int hs1(int x, int y)
+{
+	return x + y;
+}
+int hs2(int x, int y)
+{
+	return x * y;
+}
+int hs3(int x, int y)
+{
+	return x - y;
+}
+int hs4(int x, int y)
+{
+	return x / y;
+}
+int main()
+{
+	int a = 0;
+	char* (*pf)(char*, const char*) = my_strcpy;
+	char* (*pfarr[4])(char*, const char*) = { my_strcpy,my_strcpy ,my_strcpy ,my_strcpy };
+	int (*pa[4])(int, int) = { hs1,hs2,hs3,hs4 };
+	for (a = 0; a < 4; a++)
+	{
+		printf("%d ", pa[a](10,1));
+
+	}
+	return 0;
+}
