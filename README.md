@@ -4494,3 +4494,18 @@ int main()
 	//这个函数指针指向的函数参数类型是  int;返回值是一个 void类型。siganal函数的返回值也是一个函数指针
 	return 0;
 }
+
+int ADD(int a,int y)
+{
+	return (a + y);
+}
+
+int main()
+{
+	int(*pa)(int, int) = ADD;
+	printf("%d\n", ADD(2, 3));
+	printf("%d\n", pa(2, 3));
+	printf("%d\n", ( * ADD)(2, 3));
+	printf("%d\n", (*pa)(2, 3));
+	return 0;
+}
