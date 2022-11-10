@@ -4543,3 +4543,30 @@ int main()
 	}
 	return 0;
 }
+
+int main()
+{
+	int a = 0;
+	int x = 0;
+	int y = 0;
+	int (*pa[])(int, int) = { 0,hs1,hs3,hs2,hs4,hs5 };
+	do
+	{
+		menu();
+		printf("选择你的算法>:");
+	    scanf("%d", &a);
+		if (a > 0 && a < 6)
+		{
+			printf("请输入两个操作数\n");
+			scanf("%d%d", &x, &y);
+			printf("%d\n", pa[a](x, y));
+		}
+		else if (a == 0)
+		{
+			printf("退出\n");
+		}
+		else
+			printf("???????\n");
+	} while (a);
+	return 0;
+}
