@@ -4570,3 +4570,19 @@ int main()
 	} while (a);
 	return 0;
 }
+void test(void(*pa)(const char*))
+{
+	printf("QWER\n");
+	printf("万豪:\n");
+	pa("bit");
+}
+
+void print(const char* arr)
+{
+	printf("AAQQ");
+}
+int main()
+{
+	test(print);
+	return 0;
+}
