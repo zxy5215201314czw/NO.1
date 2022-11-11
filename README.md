@@ -4618,3 +4618,24 @@ int main()
 	}
 	return 0;
 }
+struct stu
+{
+	char name[20];
+	int tizhong;
+	float yanjing;
+};
+
+int cmp(const void* add, const void* abb)
+{
+	return ((struct stu*)add)->tizhong - ((struct stu*)abb)->tizhong;
+}
+
+
+int main()
+{
+	int a = 0;
+	struct stu c[3] = { {"zhangsan",5500,5.0 }, {"wnagwu",2200,2.3},{"lisi",1052,5.2}};
+	int sz = sizeof(c) / sizeof(c[0]);
+	qsort(c, sz, sizeof(c[0]), cmp);
+	return 0;
+}
