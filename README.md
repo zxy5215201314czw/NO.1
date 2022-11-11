@@ -4586,3 +4586,35 @@ int main()
 	test(print);
 	return 0;
 }
+void paixu(int arr[10], int a)
+{
+	int i = 0;
+	for (i = 0; i < a - 1; i++)
+	{
+		int j = 0;
+		for (j = 0; j < a - 1 - i; j++)
+		{
+			if (arr[j] > arr[j + 1])
+			{
+				int tmp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = tmp;
+			}
+		}
+	}
+}
+
+
+
+int main()
+{
+	int a = 0;
+	int arr[10] = { 9,8,7,4,5,6,3,2,1,0 };
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	paixu(arr, sz);
+	for (a = 0; a < sz; a++)
+	{
+		printf("%d ", arr[a]);
+	}
+	return 0;
+}
