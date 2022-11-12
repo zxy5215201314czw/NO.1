@@ -4639,3 +4639,67 @@ int main()
 	qsort(c, sz, sizeof(c[0]), cmp);
 	return 0;
 }
+
+struct stu 
+{
+	char name[20];
+	int tizhong;
+
+};
+
+void jiaohuan(char* a, char* b, int kuan)
+{
+	int i = 0;
+	for (i = 0; i < kuan; i++)
+	{
+		char tmp = *a;
+		*a = *b;
+		*b = tmp;
+		a++; b++;
+	}
+}
+void paixu(void* base, int sz, int kuan, int(*cmp)(void*, void*))
+{
+	int i = 0;
+	for (i = 0; i < sz - 1; i++)
+	{
+		int j = 0;
+		for (j = 0; j < sz - 1 - i; j++)
+		{
+			if (cmp((char*)base + j * kuan, (char*)base + (j + 1) * kuan)>0)
+			{
+				jiaohuan((char*)base + j * kuan, (char*)base + (j + 1) * kuan,kuan);
+			}
+		}
+	}
+}
+
+int cmp_zhengshu(void* a, void* b)
+{
+	return *(int*)a - *(int*)b;
+}
+
+int cmp_jiegouti_name(void* a, void* b)
+{	
+	return strcmp(((struct stu*)a)->name,((struct stu*)b)->name);
+}
+
+int cmp_jiegouti_tizhong(void* a, void* b)
+{
+	return ((struct stu*)a)->tizhong - ((struct stu*)b)->tizhong;
+}
+
+
+
+
+int main()
+{
+	int arr[10] = { 9,8,7,4,5,6,3,2,1,0 };
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	struct stu c[3] = { {"sikadi",4000},{"love",5200},{"AAQQ",6541} };
+	int sc = sizeof(c) / sizeof(c[0]);
+	paixu(arr, sz, sizeof(arr[0]), cmp_zhengshu);
+	paixu(c, sc, sizeof(c[0]), cmp_jiegouti_name);
+	paixu(c, sc, sizeof(c[0]), cmp_jiegouti_tizhong);
+	return 0;
+}
