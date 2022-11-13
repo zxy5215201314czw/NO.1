@@ -4733,3 +4733,19 @@ int main()
 
 	return 0;
 }
+
+int main()
+{
+	char arr[] = { 'a','b','c','d','e','f' };
+	const char* ret = arr;
+	printf("%d\n", strlen(arr));//随机值
+	printf("%d\n", strlen(arr + 0));//随机值
+	//printf("%d\n", strlen(*arr));//错误代码
+	//printf("%d\n", strlen(arr[1]));//错误代码
+	printf("%d\n", strlen(*&arr));//随机值
+	printf("%d\n", strlen((const char*) & ret + 1));//随机值与上面差6位
+	printf("%d\n", strlen(&arr[0]+1));//随机值与上面差1位
+
+	return 0;
+
+}
