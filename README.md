@@ -4719,3 +4719,17 @@ int main()
 
 	return 0;
 }
+
+int main()
+{
+	char arr[] = { 'a','b','c','d','e','f' };
+	printf("%d\n", sizeof(arr));//6
+	printf("%d\n", sizeof(arr+0));//4
+	printf("%d\n", sizeof(*arr));//1
+	printf("%d\n", sizeof(arr[1]));//1
+	printf("%d\n", sizeof(&arr));//4
+	printf("%d\n", sizeof(&arr+1));//4
+	printf("%d\n", sizeof(&arr[0]+1));//4
+
+	return 0;
+}
