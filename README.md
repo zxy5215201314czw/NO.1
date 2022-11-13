@@ -4703,3 +4703,19 @@ int main()
 	paixu(c, sc, sizeof(c[0]), cmp_jiegouti_tizhong);
 	return 0;
 }
+int main()
+{
+	int a[4] = { 1,2,3,4 };
+	printf("%d\n", sizeof(a));//16
+	printf("%d\n", sizeof(a+0));//4
+	printf("%d\n", sizeof(*a));//4
+	printf("%d\n", sizeof(a+1));//4
+	printf("%d\n", sizeof(a[1]));//4
+	printf("%d\n", sizeof(&a));//4
+	printf("%d\n", sizeof(*&a));//16
+	printf("%d\n", sizeof(&a+1));//4
+	printf("%d\n", sizeof(&a[0]));//4
+	printf("%d\n", sizeof(&a[0]+1));//4
+
+	return 0;
+}
