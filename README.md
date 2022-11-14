@@ -4749,3 +4749,50 @@ int main()
 	return 0;
 
 }
+
+					void jiafa()
+{
+	printf("6\n");
+}
+
+void jianfa()
+{
+	printf("6\n");
+}
+
+void chengfa()
+{
+	printf("6\n");
+}
+
+void chufa()
+{
+	printf("6\n");
+}
+
+void yihuo()
+{
+	printf("6\n");
+}
+
+int main()
+{
+	int a = 0;
+	int x = 0;
+	void(*b[])() = { 0,jiafa,jianfa,chengfa,chufa,yihuo };
+	
+	do
+	{
+		menu();
+		scanf("%d", &a);
+		if (a > 0 && a < 6)
+		{
+			b[a]();
+		}
+		else if (a == 0)
+			printf("下次再见\n");
+		else
+			printf("你输入了一个不存在的数字\n");
+	}while (a);
+	return 0;
+}
