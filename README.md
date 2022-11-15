@@ -4796,3 +4796,26 @@ int main()
 	}while (a);
 	return 0;
 }
+
+int main()
+{
+	char arr[] = "abcdef";
+
+	//printf("%d\n", sizeof(arr));//7
+	//printf("%d\n", sizeof(arr+0));//4
+	//printf("%d\n", sizeof(*arr));//1
+	//printf("%d\n", sizeof(arr[1]));//1
+	//printf("%d\n", sizeof(&arr));//4
+	//printf("%d\n", sizeof(&arr+1));//4
+	//printf("%d\n", sizeof(&arr[0]+1));//4
+
+	printf("%d\n", strlen(arr));//6
+	printf("%d\n", strlen(arr + 0));//6
+	//printf("%d\n", strlen((const char*) (*arr)));//错误
+	//printf("%d\n", strlen((const char*)arr[1]));//错误
+	//printf("%d\n", strlen(&arr));//6   在以往的编译器可以运行
+	//printf("%d\n", strlen(&arr + 1));//随机值  在以往的编译器可以运行
+	printf("%d\n", strlen(&arr[0] + 1));//5
+
+	return 0;
+}
