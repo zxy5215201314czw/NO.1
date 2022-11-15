@@ -4819,3 +4819,26 @@ int main()
 
 	return 0;
 }
+
+int main()
+{
+	const char *p = "abcdef";
+
+	printf("%d\n", sizeof(p));//4
+	printf("%d\n", sizeof(p+1));//4
+	printf("%d\n", sizeof(*p));//1
+	printf("%d\n", sizeof(p[0]));//1
+	printf("%d\n", sizeof(&p));//4
+	printf("%d\n", sizeof(&p+1));//4
+	printf("%d\n", sizeof(&p[0]+1));//4
+
+	printf("%d\n", strlen(p));//6
+	printf("%d\n", strlen(p + 1));//5
+	//printf("%d\n", strlen(*p));//错误
+	//printf("%d\n", strlen(*p[1]));//错误
+	//printf("%d\n", strlen(&p));//随机值  在以往的编译器可以运行
+	//printf("%d\n", strlen(&p + 1));//随机值  在以往的编译器可以运行
+	printf("%d\n", strlen(&p[0] + 1));//5
+
+	return 0;
+}
