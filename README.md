@@ -4842,3 +4842,27 @@ int main()
 
 	return 0;
 }
+
+#include<stdio.h>
+int main()
+{
+   int a,b;
+
+     for(b=0;b<a;b++)
+      {   
+        if(b==0)
+         printf("\n");
+        else if(b==1)
+         printf("      *\n");
+        else if(b==2)
+         printf("     **\n");
+        else if(b==3)
+         printf("    ***\n");
+        else if(b==4)
+         printf("    **\n");
+        else if(b==5)
+         printf("   **\n");
+      }
+
+   return 0;
+}
