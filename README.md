@@ -4866,3 +4866,25 @@ int main()
 
    return 0;
 }
+
+ int main()
+{
+	int a[3][4] = { 0 };
+	printf("%d\n", sizeof(a));//3*4*4  48
+	printf("%d\n", sizeof(a[0][0]));//4
+	printf("%d\n", sizeof(a[0]));//16   计算的是第一行的内存大小  4*4  
+	                             //a[0]相当于第一行数组的数组名 
+	printf("%d\n", sizeof(a[0]+1));//4/8  这是第一行第二个元素的地址
+	printf("%d\n", sizeof(*(a[0]+1)));//4
+	printf("%d\n", sizeof(a+1));//4/8  这是二维数组的首元素+1，是第二行数组的地址。
+	printf("%d\n", sizeof(*(a+1)));//16 计算的是第二行的内存大小
+	                               //相当于第二行数组的数组名 
+	printf("%d\n", sizeof(&a[0]+1));//4/8  这是第二行的地址 
+	printf("%d\n", sizeof(*( & a[0] + 1)));//16第二行内存的大小
+	printf("%d\n", sizeof(*a));//16 二维数组第一行的内存大小
+	printf("%d\n", sizeof(a[3]));//16  sizeof(表达式)，其中的表达式并不真正运算
+	                             //也就是说sizeof(表达式)中的表达式是否真的存在并不重要
+	                              // sizeof 只会根据其类型进行计算，而不会去进行表达式的运算
+
+	return 0;
+}
