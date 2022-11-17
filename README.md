@@ -4897,3 +4897,22 @@ int main()
 	  // 2  5
 	return 0;
 }
+
+struct Test
+{
+	int Num;
+	char* pcName;
+	short sDate;
+	char cha[2];
+	short sBa[4];
+}*p;
+//已知结构体的内存是20个字节
+//设p的值为0x100000，求以下的值
+int main()
+{
+	printf("%p\n", p + 0x1);
+	printf("%p\n", (unsigned long)p + 0x1);
+	printf("%p\n", (unsigned int*)p + 0x1);
+	// 00100014  00100001  00100004 
+	return 0;
+}
