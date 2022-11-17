@@ -4916,3 +4916,80 @@ int main()
 	// 00100014  00100001  00100004 
 	return 0;
 }
+
+#include<stdio.h>
+#include<windows.h>
+#include<string.h>
+#include<time.h>
+#include<math.h>
+#include<stdlib.h>
+
+void bianhua(int tree[100][99], int a, int x, int y)
+{
+	int i = 0;
+	int j = 0;
+	int rmp = a;
+	for (j = 0; j < a; j++)
+	{
+		for (i = 0; i < a; i++)
+		{
+			tree[x][y] = 1;
+			y++;
+		}
+		x++;
+		y = y - a - 2;
+		a+=4;
+		if (a == 4 * (rmp - 1) + rmp)
+			break;
+	}
+}
+
+
+void bianhua2(int tree[100][99], int x, int y)
+{
+	int i = 0;
+	int rmp = x;
+	for (i = 0; i < x; i++)
+	{
+		tree[x][y] = 1;
+		tree[x][++y] = 1;
+		tree[x][++y] = 1;
+		tree[x][++y] = 1;
+		x++;
+		y = y - 3;
+		if (i == rmp)
+			break;
+	}
+		
+
+}
+
+
+int main()
+{
+	int a, b, c, d, e, f;
+	int tree[100][99] = { 0 };
+	system("mode con cols=102 lines=47");
+	bianhua(tree, 10, 0, 48);
+	bianhua(tree, 18, 9, 44);
+	bianhua2(tree, 26, 44);
+	bianhua2(tree, 26, 58);
+	for (a = 0; a < 40; a++)
+	{
+		if (a == 0)
+			printf("\n");
+		for (b = 0; b < 100; b++)
+		{
+			if (tree[a][b] == 1)
+				printf("*");
+			else
+				printf(" ");
+		}
+		printf("\n");
+	}
+	system("pause");
+
+
+
+	return 0;
+}
