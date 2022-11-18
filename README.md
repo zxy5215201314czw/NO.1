@@ -4924,7 +4924,7 @@ int main()
 #include<math.h>
 #include<stdlib.h>
 
-void bianhua(int tree[100][99], int a, int x, int y)
+void bianhua(int tree[100][100], int a, int x, int y)
 {
 	int i = 0;
 	int j = 0;
@@ -4944,8 +4944,22 @@ void bianhua(int tree[100][99], int a, int x, int y)
 	}
 }
 
+void bianhua1(int tree[100][100],int x)
+{
+	int i = 0;
+	for (i = x; i < 100; i++)
+	{
+		int j = 0;
+		for (j = 0; j < 100; j++)
+		{
+			tree[i][j] = 0;
+		}
+	}
 
-void bianhua2(int tree[100][99], int x, int y)
+}
+
+
+void bianhua2(int tree[100][100], int x, int y)
 {
 	int i = 0;
 	int rmp = x;
@@ -4955,8 +4969,9 @@ void bianhua2(int tree[100][99], int x, int y)
 		tree[x][++y] = 1;
 		tree[x][++y] = 1;
 		tree[x][++y] = 1;
+		tree[x][++y] = 1;
 		x++;
-		y = y - 3;
+		y = y - 4;
 		if (i == rmp)
 			break;
 	}
@@ -4967,23 +4982,62 @@ void bianhua2(int tree[100][99], int x, int y)
 
 int main()
 {
-	int a, b, c, d, e, f;
-	int tree[100][99] = { 0 };
+	int a, b,c,d,e,f;
+	int tree[100][100] = { 0 };
 	system("mode con cols=102 lines=47");
-	bianhua(tree, 10, 0, 48);
-	bianhua(tree, 18, 9, 44);
-	bianhua2(tree, 26, 44);
-	bianhua2(tree, 26, 58);
+	bianhua(tree, 4, 3, 48);
+	bianhua(tree, 7, 6, 47);
+	bianhua(tree, 21, 12, 40);
+	bianhua1(tree, 17);
+	bianhua(tree, 25, 17, 38);
+	bianhua1(tree, 25);
+	bianhua2(tree, 25, 48);
+	tree[24][23] = 1; tree[24][77] = 1;
+	tree[3][47] = 1; tree[5][43] = 1; tree[11][36] = 1; tree[11][64] = 1;
+	tree[0][50] = 1; tree[3][52] = 1; tree[4][53] = 1; tree[4][54] = 1;
+	tree[5][56] = 1; tree[3][53] = 1; tree[4][54] = 1; tree[5][57] = 1;
+	for (d = 1; d < 3; d++)
+	{
+		if (d == 1)
+		{
+			for (c = 48; c <= 52; c++)
+			{
+				tree[d][c] = 1;
+			}
+		}
+		else
+		{
+			for (c = 49; c <= 51; c++)
+			{
+				tree[d][c] = 1;
+			}
+		}
+	}
 	for (a = 0; a < 40; a++)
 	{
 		if (a == 0)
+		{
 			printf("\n");
+			printf("\n");
+			printf("\n");
+
+		}
 		for (b = 0; b < 100; b++)
 		{
-			if (tree[a][b] == 1)
-				printf("*");
+			if (a == 0 && b == 50)
+			{
+				if (tree[a][b] == 1)
+					printf("\033[40;33;1m*\033[1m");
+				else
+					printf(" ");
+			}
 			else
-				printf(" ");
+			{
+				if (tree[a][b] == 1)
+					printf("\033[40;32;5m*\033[1m");
+				else
+					printf(" ");
+			}
 		}
 		printf("\n");
 	}
