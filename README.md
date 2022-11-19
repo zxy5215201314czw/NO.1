@@ -5116,3 +5116,16 @@ int main()
   	//在老版本编译器可以运行
 	return 0;
 }
+
+int main()
+{
+	int a;
+	for (a = 300; a > 16; a--)
+	{
+		if (a % 17 == 0)
+			break;
+	}
+	printf("%d", a);
+
+	return 0;
+}
