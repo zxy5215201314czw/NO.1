@@ -4992,10 +4992,11 @@ int main()
 	bianhua(tree, 25, 17, 38);
 	bianhua1(tree, 25);
 	bianhua2(tree, 25, 48);
-	tree[24][23] = 1; tree[24][77] = 1;
-	tree[3][47] = 1; tree[5][43] = 1; tree[11][36] = 1; tree[11][64] = 1;
-	tree[0][50] = 1; tree[3][52] = 1; tree[4][53] = 1; tree[4][54] = 1;
-	tree[5][56] = 1; tree[3][53] = 1; tree[4][54] = 1; tree[5][57] = 1;
+	tree[24][23] = 1; tree[24][77] = 1;tree[3][47] = 1; tree[5][43] = 1;
+	 tree[11][36] = 1; tree[11][64] = 1;tree[0][50] = 1; tree[3][52] = 1;
+	 tree[4][53] = 1; tree[4][54] = 1;tree[5][56] = 1; tree[3][53] = 1;
+	 tree[4][54] = 1; tree[5][57] = 1;tree[25][47] = 2; tree[26][47] = 2;
+	 tree[27][47] = 2; tree[27][46] = 2; tree[28][47] = 2; tree[28][46] = 2;
 	for (d = 1; d < 3; d++)
 	{
 		if (d == 1)
@@ -5024,20 +5025,45 @@ int main()
 		}
 		for (b = 0; b < 100; b++)
 		{
-			if (a == 0 && b == 50)
+			
+			if (a < 4)
 			{
-				if (tree[a][b] == 1)
+				if (a == 1 && b == 50)
+					printf("\033[40;32;5m*\033[1m");
+				else if (a == 2 && b == 50)
+					printf("\033[40;32;5m*\033[1m");
+				else if (a == 3 && b >= 49 && b <= 51)
+					printf("\033[40;32;5m*\033[1m");
+				else if (tree[a][b] == 1)
 					printf("\033[40;33;1m*\033[1m");
 				else
 					printf(" ");
+			}
+			else if (a == 25 && b == 41)
+			{
+				printf("\033[40;33;1m||\033[1m");
+
+
+			}
+			else if (a == 26 && b == 41)
+			{
+				printf("\033[40;33;1m||\033[1m");
+			}
+			else if (a >= 27 && a <= 28 && b >= 40 && b <= 41)
+			{
+				printf("\033[40;33;1m■\033[1m");
 			}
 			else
 			{
 				if (tree[a][b] == 1)
 					printf("\033[40;32;5m*\033[1m");
-				else
+				//else
+				else if (tree[a][b] == 0)
 					printf(" ");
 			}
+			if (a == 26 && b == 40)
+				printf("\033[40;33;m\033[1m");
+
 		}
 		printf("\n");
 	}
