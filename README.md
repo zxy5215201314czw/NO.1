@@ -5160,3 +5160,13 @@ int main()
 
 	return 0;
 }
+
+int main()
+{
+	const char* a[] = { "work","at","blibaba" };
+	const char** pa = a;
+	pa++;
+	printf("%s\n", *pa);//at
+
+	return 0;
+}
