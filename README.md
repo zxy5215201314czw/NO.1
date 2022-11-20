@@ -5129,3 +5129,23 @@ int main()
 
 	return 0;
 }
+
+int main()
+{   
+	int a = 0;
+	int b = 1;
+	int c = 0;
+	int d = 0;
+	printf("请输入一个数\n");
+	scanf_s("%d", &a);
+	for (c = 2; c <= a / 2; c++)
+	{
+		if (a % c == 0)
+			b = b + c;
+	}
+	
+
+	printf("%d  ", b );
+
+	return 0;
+}
