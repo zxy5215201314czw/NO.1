@@ -4924,6 +4924,9 @@ int main()
 #include<math.h>
 #include<stdlib.h>
 
+#include"圣诞节.h"
+
+
 void bianhua(int tree[100][100], int a, int x, int y)
 {
 	int i = 0;
@@ -4938,13 +4941,13 @@ void bianhua(int tree[100][100], int a, int x, int y)
 		}
 		x++;
 		y = y - a - 2;
-		a+=4;
+		a += 4;
 		if (a == 4 * (rmp - 1) + rmp)
 			break;
 	}
 }
 
-void bianhua1(int tree[100][100],int x)
+void bianhua1(int tree[100][100], int x)
 {
 	int i = 0;
 	for (i = x; i < 100; i++)
@@ -4955,7 +4958,6 @@ void bianhua1(int tree[100][100],int x)
 			tree[i][j] = 0;
 		}
 	}
-
 }
 
 
@@ -4975,8 +4977,55 @@ void bianhua2(int tree[100][100], int x, int y)
 		if (i == rmp)
 			break;
 	}
-		
+}
 
+
+void chushihua(int xue[100][100], int x, int y)
+{
+	int i = 0;
+	for (i = 0; i < x; i++)
+	{
+		int j = 0;
+		for (j = 0; j < y; j++)
+		{
+			xue[i][j] = 1;
+		}
+	}
+}
+
+
+void xiaxue(int xue[100][100], int y)
+{
+	int i = 0;
+	int j = 0;
+	for (i = 0; i < y; i++)
+	{
+		j = rand() % 5;
+		xue[0][i] = j;
+	}
+}
+
+
+void xiaxue2(int xue[100][100], int x, int y)
+{
+	int i = 0;
+	for (i = x; i >0; i--)
+	{
+		int j = 0;
+		for (j = 0; j < y; j++)
+		{
+			xue[i][j] = xue[i - 1][j];
+		}
+	}
+}
+
+
+
+void HideConsoleCursor(void)
+{
+	CONSOLE_CURSOR_INFO cursor_info = { 1, 0 };
+	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE),
+		&cursor_info);
 }
 
 
