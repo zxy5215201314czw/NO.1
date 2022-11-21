@@ -5269,3 +5269,19 @@ int main()
 
 	return 0;
 }
+
+int main()
+{
+	int a = 0;
+	int b = 0;
+	int c = 0;
+	again:
+	a=a+c;
+	c++;
+	b++;
+	if (b <= 100)
+		goto again;
+	else
+		printf("%d", a);
+	return 0;
+}
