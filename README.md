@@ -4917,12 +4917,24 @@ int main()
 	return 0;
 }
 
+#pragma once
 #include<stdio.h>
 #include<windows.h>
 #include<string.h>
 #include<time.h>
 #include<math.h>
 #include<stdlib.h>
+
+
+
+
+void bianhua(int tree[100][100], int a, int x, int y);
+void bianhua1(int tree[100][100], int x);
+void bianhua2(int tree[100][100], int x, int y);
+void chushihua(int xue[100][100],int x,int y);
+void xiaxue(int xue[100][100], int y);
+void xiaxue2(int xue[100][100], int x, int y);
+void HideConsoleCursor(void);
 
 #include"圣诞节.h"
 
