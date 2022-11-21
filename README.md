@@ -5170,3 +5170,21 @@ int main()
 
 	return 0;
 }
+
+int main()
+{
+	const char* c[] = { "ENTER","NEW","POIMT","FIRST" };
+	const char** cp[] = { c + 3,c + 2,c + 1,c };
+	const char*** cpp = cp;
+	printf("%s\n", **++cpp);//POIMT
+	          //++cpp这是一个自增符号，此后cpp原本的值将被改变
+	printf("%s\n", *--*++cpp + 3);//ER
+	          //此处的++cpp同上
+	printf("%s\n", *cpp[-2]+3);//ST
+	         // *cpp[-2]+3等价于 *(*(cpp-2))+3  
+	         //此处的cpp-2 是运算符号，cpp的值不会被改变
+	printf("%s\n", cpp[-1][-1] + 1);//EW
+	         // cpp[-1][-1]+1等价于*(*(cpp-1)-1)+1
+
+	return 0;
+}
