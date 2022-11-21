@@ -4980,10 +4980,18 @@ void bianhua2(int tree[100][100], int x, int y)
 }
 
 
+#include"圣诞节.h"
+
+
 int main()
 {
-	int a, b,c,d,e,f;
+	Sleep(2000);
+	int a, b,c,d,e=50,f=0;
 	int tree[100][100] = { 0 };
+	int xue[100][100] = { 0 };
+	HideConsoleCursor();
+	srand((unsigned int)time(NULL));
+	chushihua(xue, 100, 100);
 	system("mode con cols=102 lines=47");
 	bianhua(tree, 4, 3, 48);
 	bianhua(tree, 7, 6, 47);
@@ -4997,82 +5005,94 @@ int main()
 	 tree[4][53] = 1; tree[4][54] = 1;tree[5][56] = 1; tree[3][53] = 1;
 	 tree[4][54] = 1; tree[5][57] = 1;tree[25][47] = 2; tree[26][47] = 2;
 	 tree[27][47] = 2; tree[27][46] = 2; tree[28][47] = 2; tree[28][46] = 2;
-	for (d = 1; d < 3; d++)
-	{
-		if (d == 1)
-		{
-			for (c = 48; c <= 52; c++)
-			{
-				tree[d][c] = 1;
-			}
-		}
-		else
-		{
-			for (c = 49; c <= 51; c++)
-			{
-				tree[d][c] = 1;
-			}
-		}
-	}
-	for (a = 0; a < 40; a++)
-	{
-		if (a == 0)
-		{
-			printf("\n");
-			printf("\n");
-			printf("\n");
+	 for (d = 1; d < 3; d++)
+	 {
+		 if (d == 1)
+		 {
+			 for (c = 48; c <= 52; c++)
+			 {
+				 tree[d][c] = 1;
+			 }
+		 }
+		 else
+		 {
+			 for (c = 49; c <= 51; c++)
+			 {
+				 tree[d][c] = 1;
+			 }
+		 }
+	 }
+	 while (e--)
+	 {
+		 
+		 xiaxue(xue, 100);
+		 xiaxue2(xue, 70, 100);
+		 for (a = 0; a < 40; a++)
+		 {
+			 
+			 /*if (a == 0)
+			 {
+				 printf("\n");
+				 printf("\n");
+				 printf("\n");
+			 }*/
+			 for (b = 0; b < 100; b++)
+			 {
 
-		}
-		for (b = 0; b < 100; b++)
-		{
+				 if (a < 4)
+				 {
+					 if (a == 1 && b == 50)
+						 printf("\033[40;32;5m*\033[1m");
+					 else if (a == 2 && b == 50)
+						 printf("\033[40;32;5m*\033[1m");
+					 else if (a == 3 && b >= 49 && b <= 51)
+						 printf("\033[40;32;5m*\033[1m");
+					 else if (tree[a][b] == 1)
+						 printf("\033[40;33;1m*\033[1m");
+					  else if (xue[a][b] == 0)
+						 printf("\033[0m*\033[1m");
+					 else
+						 printf(" ");
+				 }
+				 else if (a == 25 && b == 41)
+				 {
+					 printf("\033[40;33;1m||\033[1m");
+
+
+				 }
+				 else if (a == 26 && b == 41)
+				 {
+					 printf("\033[40;33;1m||\033[1m");
+				 }
+				 else if (a >= 27 && a <= 28 && b >= 40 && b <= 41)
+				 {
+					 printf("\033[40;33;1m■\033[1m");
+				 }
+				 else
+				 {
+					 if (tree[a][b] == 1)
+						 printf("\033[40;32;5m*\033[1m");
+					 //else
+					 else if (xue[a][b] == 0)
+						 printf("\033[0m*\033[1m");
+					 else if (tree[a][b] == 0)
+						 printf(" ");
+				 }
 			
-			if (a < 4)
-			{
-				if (a == 1 && b == 50)
-					printf("\033[40;32;5m*\033[1m");
-				else if (a == 2 && b == 50)
-					printf("\033[40;32;5m*\033[1m");
-				else if (a == 3 && b >= 49 && b <= 51)
-					printf("\033[40;32;5m*\033[1m");
-				else if (tree[a][b] == 1)
-					printf("\033[40;33;1m*\033[1m");
-				else
-					printf(" ");
-			}
-			else if (a == 25 && b == 41)
-			{
-				printf("\033[40;33;1m||\033[1m");
-
-
-			}
-			else if (a == 26 && b == 41)
-			{
-				printf("\033[40;33;1m||\033[1m");
-			}
-			else if (a >= 27 && a <= 28 && b >= 40 && b <= 41)
-			{
-				printf("\033[40;33;1m■\033[1m");
-			}
-			else
-			{
-				if (tree[a][b] == 1)
-					printf("\033[40;32;5m*\033[1m");
-				//else
-				else if (tree[a][b] == 0)
-					printf(" ");
-			}
-			if (a == 26 && b == 40)
-				printf("\033[40;33;m\033[1m");
-
-		}
-		printf("\n");
-	}
-	system("pause");
+			 }
+			 printf("\n");
+		 } 
+		 Sleep(500);
+		 system("cls");
+	 }
+	//xiaxue3(xue, 100, 100);
+	//system("pause");
 
 
 
 	return 0;
 }
+
 
 int main()
 {
