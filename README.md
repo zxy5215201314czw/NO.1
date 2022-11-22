@@ -5322,3 +5322,24 @@ int main()
 	printf("%s", a);
 	return 0;
 }
+
+int main()
+{
+	int a = 0;
+	int n = 0;
+	scanf_s("%d%d", &a, &n);
+	int sum = 0;
+	int i = 0;
+	int j = 0;
+
+	for (i = 0; i < n; i++)
+	{
+
+	    j = j * 10 + a;
+		sum += j;
+
+	}
+
+	printf("%d ", sum);
+	return 0;
+}
