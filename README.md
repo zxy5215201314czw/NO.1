@@ -5298,3 +5298,27 @@ int main()
 
 	return 0;
 }
+void nizhuan(char *a)
+{
+	char* b = a;
+	int len = strlen(a);
+	char* c = a + len - 1;
+	while (b < c)
+	{
+		char tem = *b;
+		*b = *c;
+		*c = tem;
+		b++;
+		c--;
+	}
+
+}
+
+
+int main()
+{
+	char a[] = "abcdef";
+	nizhuan(a);
+	printf("%s", a);
+	return 0;
+}
