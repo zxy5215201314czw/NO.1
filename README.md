@@ -5285,3 +5285,16 @@ int main()
 		printf("%d", a);
 	return 0;
 }
+
+int main()
+{
+	unsigned long pulArray[] = { 6,7,8,9,10 };
+	unsigned long* pulptr;
+
+	pulptr = pulArray;
+	*(pulptr + 3) += 3;
+
+	printf("%d,%d\n", *pulptr, *(pulptr + 3));//6 //12
+
+	return 0;
+}
