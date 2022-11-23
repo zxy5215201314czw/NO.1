@@ -5343,3 +5343,32 @@ int main()
 	printf("%d ", sum);
 	return 0;
 }
+
+int main()
+{
+	int n = 0;
+	for (n = 0; n <= 100000; n++)
+	{
+		int j = 1;
+		int m = n;
+		int sum = 0;
+		int tem = n;
+		//计算位数
+		while (m /= 10)
+		{
+			j++;
+		}
+		//每一位数的n次方
+		while (tem)
+		{
+			sum += pow(tem % 10, j);
+			tem /= 10;
+		}
+		//判断相加后是否相等
+		if (n == sum)
+			printf("%d ", n);
+
+	}
+
+	return 0;
+}
