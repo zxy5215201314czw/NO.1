@@ -5407,3 +5407,16 @@ int main()
 
 	return 0;
 }
+
+int main()
+{
+	int a = 0;
+	for (a = 0; a <= 200; a += 7)
+	{
+		printf("%5d", a);
+	}
+	printf("\n");
+	printf("甭管我咋写出来的，你就说答案对不对吧\n");
+
+	return 0;
+}
