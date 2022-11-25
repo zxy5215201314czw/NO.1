@@ -5420,3 +5420,17 @@ int main()
 
 	return 0;
 }
+
+int SB(int a, int b)
+{
+	return a+b;
+}
+
+int main()
+{
+	int a = 20;
+	int b = 10;
+	printf("%d", SB(a,b));
+
+	return 0;
+}
