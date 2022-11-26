@@ -5481,3 +5481,22 @@ int main()
 	printf("%d", b);
 	return 0;
 }
+					
+int main()
+{
+	int a = 0;
+	int b = 0;
+	int c = 0;
+	scanf_s("%d", &a);
+	b = a; c = a;
+	while (c >= 2)
+	{
+		b += c / 2;
+		c = (c / 2) + (c % 2);
+
+	}
+	printf("%d", b);
+
+
+	return 0;
+}
