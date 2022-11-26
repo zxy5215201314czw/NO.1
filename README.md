@@ -5500,3 +5500,46 @@ int main()
 
 	return 0;
 }
+					
+调整奇数偶数，奇数在偶数前面
+void print(int arr[13], int sz)
+{
+	int i = 0;
+	for (i = 0; i < sz; i++)
+	{
+		printf("%d ", arr[i]);
+	}
+}
+void move(int arr[], int sz)
+{
+	int zuo = 0;
+	int you = sz - 1;
+	while (zuo < you)
+	{//从左边找一个偶数
+		while (zuo < you && arr[zuo] % 2 == 1)
+		{
+			zuo++;
+		}
+		//从右边找一个奇数
+		while (zuo < you && arr[you] % 2 == 0)
+		{
+			you--;
+		}
+		if (zuo < you)
+		{
+			int tem = arr[you];
+			arr[you] = arr[zuo];
+			arr[zuo] = tem;
+		}
+	}
+}
+int main()
+{
+	int a = 0;
+	int arr[] = { 8,6,5,2,1,4,8,96,2,5,7,21,8 };
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	move(arr,sz);
+	print(arr, sz);
+
+	return 0;
+}
