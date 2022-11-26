@@ -5470,3 +5470,14 @@ int main()
 	fun(students + 1);
 	return 0;
 }
+一瓶汽水1元，两个空瓶换一瓶汽水，现有二十元，可以喝多少汽水；
+int main()
+{
+	int a = 0;
+	int b = 0;
+	scanf_s("%d", &a);
+	if (a > 0)
+	b = 2 * a - 1;
+	printf("%d", b);
+	return 0;
+}
