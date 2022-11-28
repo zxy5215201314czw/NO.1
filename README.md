@@ -5543,3 +5543,15 @@ int main()
 
 	return 0;
 }
+
+int main()
+{
+	unsigned char a = 200; 
+	unsigned char b = 100;
+	unsigned char c = 0;
+	c = a + b;//整型提升
+	printf("%d %d", a + b, c);
+	// a+b表示300+100  300
+	// c=a+b  表示在unsigned char上的第301个数字 44 
+	return 0;
+}
