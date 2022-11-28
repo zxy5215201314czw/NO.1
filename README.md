@@ -5582,3 +5582,35 @@ int main()
 	//strlen遇到\0停止，即第一次遇到0的时候停止，则结果为255
 	return 0;
 }
+
+杨辉三角
+int main()
+{
+	int a = 0;
+	scanf_s("%d", &a);
+	int i = 0;
+	int j = 0;
+	int arr[100][100] = { 0 };
+	for (i = 0; i < a; i++)
+	{
+		for (j = 0; j <= i; j++)
+		{
+			if (j == 0)
+				arr[i][j] = 1;
+			if (i == j)
+				arr[i][j] = 1;
+			if (i >= 2 && j >= 1)
+				arr[i][j] = arr[i - 1][j] + arr[i - 1][j - 1];
+		}
+	}
+	for (i = 0; i < a; i++)
+	{
+		for (j = 0; j <= i; j++)
+		{
+			printf("%d ", arr[i][j]);
+		}
+		printf("\n");
+	}
+
+	return 0;
+}
