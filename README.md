@@ -5568,3 +5568,17 @@ int main()
 	return 0;
 }
 //在32位大端模式处理器上变量b等于
+
+int main()
+{
+	char a[1000] = { 0 };
+	int i = 0;
+	for (i = 0; i < 1000; i++)
+	{
+		a[i] = -1 - i;
+	}
+	printf("%d", strlen(a));
+	//char 只能存储 0 --- 127 和 -1 --- -128
+	//strlen遇到\0停止，即第一次遇到0的时候停止，则结果为255
+	return 0;
+}
