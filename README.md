@@ -5555,3 +5555,16 @@ int main()
 	// c=a+b  表示在unsigned char上的第301个数字 44 
 	return 0;
 }
+int main()
+{
+	unsigned int a = 0x1234;
+	//0x00 00 12 34
+	unsigned char b = *(unsigned char*)&a;
+	//char类型的指针一次访问一个字节
+	//小端 34 12 00 00 小的数据放在低地址 大的数据放在高地址
+	//大端 00 00 12 34 大的数据放在高地址 小的数据放在低地址
+	printf("%d\n", a);
+	//00110100  3*16+4
+	return 0;
+}
+//在32位大端模式处理器上变量b等于
