@@ -5669,3 +5669,21 @@ int main()
 	}
 	return 0;
 }
+
+int main()
+{
+	char str1[] = "hello world";
+	char str2[] = "hellr world";
+	const char* str3 = "hello world";
+	const char* str4 = "hello world";
+	if (str1 == str2)
+		printf("A ");
+	else
+		printf("C ");
+	if (str3 == str4)
+		printf("B ");
+	else
+		printf("D ");
+
+	return 0;
+}
