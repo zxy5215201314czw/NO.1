@@ -5692,3 +5692,7 @@ int* fun(int a, int b);     函数声明
 int(*)fun(int a, int b);    错误书写
 int(*fun)(int a, int b);    函数指针
 (int*)fun(int a, int b);    函数声明
+					
+设置一个函数指针指向形参为两个int，返回值为一个函数指针，返回的指针指向的函数的形参是一个int返回值是int 
+aint (*(*arr(int,int)))(int)
+
