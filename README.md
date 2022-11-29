@@ -5687,3 +5687,8 @@ int main()
 
 	return 0;
 }
+
+int* fun(int a, int b);     函数声明
+int(*)fun(int a, int b);    错误书写
+int(*fun)(int a, int b);    函数指针
+(int*)fun(int a, int b);    函数声明
