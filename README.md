@@ -5696,3 +5696,16 @@ int(*fun)(int a, int b);    函数指针
 设置一个函数指针指向形参为两个int，返回值为一个函数指针，返回的指针指向的函数的形参是一个int返回值是int 
 aint (*(*arr(int,int)))(int)
 
+	
+void ercichushihua(int xue[100][100],int a,int b, int x, int y)
+{
+	int i = 0;
+	int j = 0;
+	for (i = x; i <= x + a; i++)
+	{
+		for (j = y; j <= y + b; j++)
+		{
+			 xue[i][j] = 3;
+		}
+	}
+}
