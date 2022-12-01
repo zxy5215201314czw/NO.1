@@ -5709,3 +5709,96 @@ void ercichushihua(int xue[100][100],int a,int b, int x, int y)
 		}
 	}
 }
+
+#include<stdio.h>
+#include<string.h>
+#include<windows.h>
+#include<math.h>
+#include<time.h>
+#include<stdlib.h>
+//从main函数开始看
+void again1(int zuobian[], int sz, int a)//此处函数用来完成功能的第三个要求
+{                                        //参数分别是 电梯，总层数，用户选择的层数
+    int x = 0;
+    for (x = 0; x < sz; x++)//循环搜索
+    {
+        if (zuobian[x] == a)//找到则停止
+        {
+            printf("到达目标层数\n");
+            break;
+        }
+        else           //没有找到则打印当前楼层
+            Sleep(1000);
+        printf("当前楼层：%d\n", zuobian[x]);
+    }
+}
+void again2(int youbian[], int sz, int a)//与上方同理，此处表示右边电梯
+{
+    int y = 0;
+    for (y = 0; y < sz; y++)
+    {
+        if (youbian[y] == a)
+        {
+            printf("到达目标层数\n");
+            break;
+        }
+        else
+            Sleep(1000);
+        printf("当前楼层：%d\n", youbian[y]);
+    }
+}
+int main()
+{
+    int a = 0;
+    int b = 0;
+    int zuobian[] = { 1,2,7,8,9 };//
+    int youbian[] = { 2,6,7,8,9 };//两个电梯的初始化
+    int sz = sizeof(zuobian) / sizeof(zuobian[0]);//
+    int sz2 = sizeof(youbian) / sizeof(youbian[0]);//数组元素个数的计算
+    do           //因为最起码要做一次电梯，所以使用  do while 
+    {
+        printf("1.左边           2.右边\n");
+        printf("请问你想使用那边的电梯?\n");//设置左右电梯
+        scanf_s("%d", &b);
+        printf("请输入你想要到达的楼层\n");
+        printf("   如果不需要请输入  0 \n");//设置楼层
+        scanf_s("%d", &a);
+        if (b == 1)//多分支来表示不同的选择，其实可以选择switch
+        {
+            int i = 0;
+            for (i = 0; i < sz; i++)//循环搜索
+            {
+                if (zuobian[i] == a)//判断用户选择的楼层是否存在
+                {
+                    again1(zuobian, sz, a);//存在则进入这个函数
+                    break;
+                }
+            }
+            if (i == sz)//不存在则这里 i 会等于 sz
+            {
+                printf("这个电梯不能满足要求\n");//给用户提示
+            }
+        }
+        else if (b == 2)
+        {
+            int i = 0;
+            for (i = 0; i < sz2; i++)//与上方同理，这里表示右边电梯
+            {
+                if (youbian[i] == a)
+                {
+                    again2(youbian, sz2, a);
+                    break;
+                }
+            }
+            if (i == sz2)
+            {
+                printf("这个电梯不能满足要求\n");
+            }
+
+        }
+        else//这个相当于swicth中的defaluct，用来表示用户瞎几把选的时候
+            printf("抱歉，电梯到不了这个层数\n");
+    } while (a);
+
+    return 0;
+}
