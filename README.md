@@ -5802,3 +5802,228 @@ int main()
 
     return 0;
 }
+
+#include"圣诞节.h"
+
+
+void bianhua(int tree[100][100], int a, int x, int y)
+{
+	int i = 0;
+	int j = 0;
+	int rmp = a;
+	for (j = 0; j < a; j++)
+	{
+		for (i = 0; i < a; i++)
+		{
+			tree[x][y] = 1;
+			y++;
+		}
+		x++;
+		y = y - a - 2;
+		a += 4;
+		if (a == 4 * (rmp - 1) + rmp)
+			break;
+	}
+}
+
+void bianhua1(int tree[100][100], int x)
+{
+	int i = 0;
+	for (i = x; i < 100; i++)
+	{
+		int j = 0;
+		for (j = 0; j < 100; j++)
+		{
+			tree[i][j] = 0;
+		}
+	}
+}
+
+
+void bianhua2(int tree[100][100], int x, int y)
+{
+	int i = 0;
+	int rmp = x;
+	for (i = 0; i < x; i++)
+	{
+		tree[x][y] = 3;
+		tree[x][++y] = 3;
+		tree[x][++y] = 3;
+		tree[x][++y] = 3;
+		tree[x][++y] = 3;
+		x++;
+		y = y - 4;
+		if (i == rmp)
+			break;
+	}
+}
+
+
+void chushihua(int xue[100][100], int x, int y)
+{
+	int i = 0;
+	for (i = 0; i < x; i++)
+	{
+		int j = 0;
+		for (j = 0; j < y; j++)
+		{
+			xue[i][j] = 1;
+		}
+	}
+}
+
+
+void xiaxue(int xue[100][100], int y)
+{
+	int i = 0;
+	int j = 0;
+	for (i = 0; i < y; i++)
+	{
+		j = rand() % 5;
+		xue[0][i] = j;
+	}
+}
+
+
+void xiaxue2(int xue[100][100], int x, int y)
+{
+	int i = 0;
+	for (i = x; i >0; i--)
+	{
+		int j = 0;
+		for (j = 0; j < y; j++)
+		{
+			if (j + 1 < y)
+				xue[i][j] = xue[i - 1][j + 1];
+			else
+				xue[i][j] = xue[i - 2][j + 1];
+		}
+	}
+}
+
+
+
+void HideConsoleCursor(void)
+{
+	CONSOLE_CURSOR_INFO cursor_info = { 1, 0 };
+	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE),
+		&cursor_info);
+}
+
+
+
+void ercichushihua(int xue[100][100],int a,int b, int x, int y)
+{
+	int i = 0;
+	int j = 0;
+	for (i = x; i <= x + a; i++)
+	{
+		for (j = y; j <= y + b; j++)
+		{
+			 xue[i][j] = 3;
+		}
+	}
+}
+#include"圣诞节.h"
+
+
+int main()
+{
+	//Sleep(2000);
+	int a, b,c,d,e=500,f=0;
+	int tree[100][100] = { 0 };
+	int xue[100][100] = { 0 };
+	HideConsoleCursor();
+	srand((unsigned int)time(NULL));
+	chushihua(xue, 100, 100);
+	system("mode con cols=102 lines=48");
+	bianhua(tree, 4, 3+4, 48);bianhua(tree, 7, 6+4, 47);bianhua(tree, 21, 12+4, 40);
+	bianhua1(tree, 17+4);bianhua(tree, 25, 17+4, 38);
+	bianhua1(tree, 25+4);bianhua2(tree, 25+4, 48);
+	tree[24+4][23] = 1; tree[24+4][77] = 1;tree[3+4][47] = 1; tree[5+4][43] = 1;
+	 tree[11+4][36] = 1; tree[11+4][64] = 1;tree[0+4][50] = 1; tree[3+4][52] = 1;
+	 tree[4+4][53] = 1; tree[4+4][54] = 1;tree[5+4][56] = 1; tree[3+4][53] = 1;
+	 tree[4+4][54] = 1; tree[5+4][57] = 1;tree[25+4][47] = 2; tree[26+4][47] = 2;
+	 tree[27+4][47] = 2; tree[27+4][46] = 2; tree[28+4][47] = 2; tree[28+4][46] = 2;
+	 tree[38][60] = 2; tree[38][61] = 2; tree[39][60] = 2; tree[39][61] = 2;
+	 for (d = 1+4; d < 3+4; d++)
+	 {
+		 if (d == 1+4)
+		 {
+			 for (c = 48; c <= 52; c++)
+			 {
+				 tree[d][c] = 1;
+			 }
+		 }
+		 else
+		 {
+			 for (c = 49; c <= 51; c++)
+			 {
+				 tree[d][c] = 1;
+			 }
+		 }
+	 }
+	 while (e--)
+	 {
+		 
+		 xiaxue(xue, 100);
+		 xiaxue2(xue, 70, 100);
+		 ercichushihua(xue, 4, 10, 27 , 44);
+		 for (a = 0; a < 45; a++)
+		 {	
+			 for (b = 0; b < 100; b++)
+			 {
+				 if (a < 8)
+				 {
+					 if (a == 4 && b == 50)
+						 printf("\033[40;33;5m*\033[1m");
+					 else if (a == 1 + 4 && b == 50)
+						 printf("\033[40;32;5m*\033[1m");
+					 else if (a == 2 + 4 && b == 50)
+						 printf("\033[40;32;5m*\033[1m");
+					 else if (a == 3 + 4 && b >= 49 && b <= 51)
+						 printf("\033[40;32;5m*\033[1m");
+					 else if (tree[a][b] == 1)
+						 printf("\033[40;33;1m*\033[1m");
+					 else if (xue[a][b] == 0)
+						 printf("\033[0m*\033[1m");
+					 else
+						 printf(" ");
+				 }
+				 else if (a == 25+4 && b == 41)
+				 {
+					 printf("\033[40;33;1m||\033[1m");
+				 }
+				 else if (a == 26+4 && b == 41)
+				 {
+					 printf("\033[40;33;1m||\033[1m");
+				 }
+				 else if (a >= 27+4 && a <= 28+4 && b >= 40 && b <= 41)
+				 {
+					 printf("\033[40;33;1m■\033[1m");
+				 }
+				 else
+				 {
+					 if (tree[a][b] == 1)
+						 printf("\033[40;32;5m*\033[1m");
+					 else if (tree[a][b] == 3)
+						 printf("\033[40;33;1m*\033[1m");
+					 else if (xue[a][b] == 0)
+						 printf("\033[0m*\033[1m");
+					 else if (tree[a][b] == 0 )
+						 printf(" ");
+				 }
+			
+			 }
+			 printf("\n");
+		 } 
+		 Sleep(500);
+		 system("cls");
+	 }
+	//xiaxue3(xue, 100, 100);
+	//system("pause");
+
+
+
+	return 0;
+}
