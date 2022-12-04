@@ -6030,3 +6030,8 @@ int main()
 void mian()
 {
 }
+ 
+ 
+ 
+ 
+ 
