@@ -6030,11 +6030,4 @@ int main()
 void mian()
 {
 }
- 
- 
- 
- 
- 
- 
- 
- 
+github.com 
