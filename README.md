@@ -6039,5 +6039,148 @@ github.com
 
 
 
+package zsm.exe;
+import java.util.Random;
+import java.util.Scanner;
+
+public class world
+{
+    public static void main(String[] args)
+    {
+//用JAVA的方法书写，1-100的素数
+        int a=0;
+        int b=0;
+        for(a=1;a<101;a++) {
+            boolean c=true;
+            for (b=2;b<a;b++){
+                if(a%b==0){
+                    c=false;
+                    break;
+                }if(b==a-1){
+                     if(c==true){
+                            System.out.println(a);
+                     }
+                }
+            }
+        }
+//编写for循环找到1-100之间的所有的素数
+       /* int a = 0;
+        for(a=1;a<100;a++) {
+            int b = 2;
+            for(b=2;b<a;b++ ){
+                if(a==1) {
+                    System.out.println(a);
+                }else if (a%b==0){
+                     break;
+                } else if(b==a-1){
+                    System.out.println(a);
+                }
+            } }*/
+
+
+    /* int win=0;
+     int he=0;
+     int win2=0;
+     System.out.println("游戏开始");
+     System.out.println("五局三胜制");
+     System.out.println("选择你的英雄");
+     System.out.println("剪刀 石头 布");
+        Scanner sc = new Scanner(System.in);
+        int i=0;
+    for(i=1;i<=5;i++)
+    {
+        System.out.println("第" + i + "局,开始");
+        String enter = sc.next();
+        int randomNumber = new Random().nextInt(3) + 1;
+        if (enter.equals("剪刀"))
+        {
+            if(randomNumber==1)
+            {
+                System.out.println("电脑选择  剪刀  ");
+        System.out.println("此次平局");
+        he++;}
+
+            else if(randomNumber==2)
+            {
+                System.out.println("电脑选择  石头  ");
+            System.out.println("此次 AI 胜利") ;
+            win2++;}
+
+            else if(randomNumber==3)
+            {
+                System.out.println("电脑选择  布  ");
+                System.out.println("此次 玩家 胜利");
+            win++; }
+        }
+
+        else if(enter.equals("石头"))
+        {
+
+            if(randomNumber==1)
+            {
+                System.out.println("电脑选择  剪刀  ");
+                System.out.println("此次 玩家 胜利");
+                win++;}
+
+            else if(randomNumber==2)
+            {
+                System.out.println("电脑选择  石头  ");
+                System.out.println("此次 平局");
+                he++;
+            }
+            else if(randomNumber==3)
+
+            {
+                System.out.println("电脑选择  布  ");
+                System.out.println("此次 AI 胜利");
+            win2++; }
+        }
+
+            else if(enter.equals("布"))
+            {
+
+                if(randomNumber==1)
+                {
+                    System.out.println("电脑选择  剪刀  ");
+                    System.out.println("此次 AI 胜利");
+                    win2++;}
+
+                else if(randomNumber==2)
+                {
+                    System.out.println("电脑选择  石头  ");
+                    System.out.println("此次 玩家胜利");
+                    win++;
+                }
+                else if(randomNumber==3)
+
+                {
+                    System.out.println("电脑选择  布  ");
+                    System.out.println("此次 平局");
+                    he++; }
+            }
+            else
+        {     System.out.println("不遵守棋规，不配本座出手！");
+              break;
+        }
+      }
+     if (win>win2)
+     {
+         System.out.println("玩家胜利  绝杀！无解！");
+         System.out.println("本局游戏，玩家获胜"+win+"局，平了"+he+"局");
+     }
+     else if(win2>win)
+     {
+         System.out.println("AI胜利  掌握之中，岂可逃之！");
+         System.out.println("本局游戏，玩家获胜"+win+"局，平了"+he+"局");
+     }
+    else
+     {
+         System.out.println("和棋  天下大事，以和为贵！");
+         System.out.println("本局游戏，玩家获胜"+win+"局，平了"+he+"局");
+     }*/
+
+    }
+
+}
 
 
