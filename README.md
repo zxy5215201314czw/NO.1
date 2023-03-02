@@ -6182,5 +6182,26 @@ public class world
     }
 
 }
+/用JAVA的方法书写，1-10000的素数，并且每次找到 8 个就换一行
+        int a = 0;
+        int b = 0;
+        int c = 0;
+        for(a=1;a<=10000;a++) {
+
+            for(b=2;b<a;b++){
+
+                if(a==1){
+                    System.out.println(a);
+                }else if(a%b==0){
+                    break;
+                }else if(b==a-1){
+                    System.out.print(a+" ");
+                    c++;
+                    if(c%8==0){
+                        System.out.println();
+                    }
+                }
+            }
+        }
 
 
